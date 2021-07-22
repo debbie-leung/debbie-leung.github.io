@@ -372,22 +372,27 @@ img {
   margin-left: 10px;
 }
 /*======================== SKILLS AND LANGUAGES ========================*/
+
+/* .languages {
+  margin: auto;
+} */
+
 .skills__content,
 .languages__content {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0;
 }
 
-.languages__content {
-  justify-self: center;
-}
+/* .skills__data {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 1fr);
+} */
 
 .skills__name,
 .languages__name {
-  display: flex;
-  align-items: center;
-  margin-bottom: var(--mb-2);
+  justify-self: left;
+  padding-left: 10vw;
 }
 
 .skills__circle,
