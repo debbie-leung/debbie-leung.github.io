@@ -275,8 +275,14 @@ img {
 
 /*======================== SOCIAL ========================*/
 .social__container {
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
   gap: 0;
+}
+
+.social__data {
+  justify-self: center;
 }
 
 .social__link {
@@ -284,8 +290,6 @@ img {
   align-items: center;
   font-size: var(--small-font-size);
   color: var(--text-color);
-  /* TODO: follow up on margin */
-  margin-left: var(--mb-4);
   margin-bottom: var(--mb-2);
 }
 
@@ -370,16 +374,19 @@ img {
 /*======================== SKILLS AND LANGUAGES ========================*/
 .skills__content,
 .languages__content {
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 0;
+}
+
+.languages__content {
+  justify-self: center;
 }
 
 .skills__name,
 .languages__name {
   display: flex;
   align-items: center;
-  /* TODO: follow up on margin */
-  margin-left: var(--mb-4);
   margin-bottom: var(--mb-2);
 }
 
@@ -499,6 +506,11 @@ img {
 
   .home__information {
     justify-self: initial;
+  }
+
+  .social__data,
+  .languages__content {
+    justify-self: left;
   }
 
   .social__link,
