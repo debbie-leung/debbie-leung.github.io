@@ -130,6 +130,7 @@ img {
 /* Layout */
 .bd-container {
   max-width: 968px;
+  /* 968 */
   width: calc(100% - 3rem);
   margin-left: var(--mb-3);
   margin-right: var(--mb-3);
@@ -333,6 +334,14 @@ img {
   transform: translate(7px, 0);
 }
 
+.education__end {
+  height: 80%;
+}
+
+.experience__end {
+  height: 95%;
+}
+
 .education__data,
 .experience__data {
   gap: 0.5rem;
@@ -353,6 +362,11 @@ img {
   font-size: var(--smaller-font-size);
 }
 
+.experience__description > li {
+  padding-left: 10px;
+  list-style-type: "-";
+  margin-left: 10px;
+}
 /*======================== SKILLS AND LANGUAGES ========================*/
 .skills__content,
 .languages__content {
@@ -495,12 +509,12 @@ img {
   }
 
   .languages__content {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     /* column-gap: 3.5rem; */
   }
 
   .interests__container {
-    grid-template-columns: repeat(5, max-content);
+    grid-template-columns: repeat(2, max-content);
     column-gap: 5rem;
   }
 }
