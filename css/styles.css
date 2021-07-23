@@ -523,6 +523,7 @@ img {
   .languages__name {
     /* TODO: follow up on margin */
     margin-left: 0;
+    padding-left: 0;
   }
 
   .languages__content {
