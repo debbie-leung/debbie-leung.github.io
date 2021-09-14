@@ -95,3 +95,39 @@ themeButton.addEventListener("click", () => {
   localStorage.setItem("selected-theme", getCurrentTheme());
   localStorage.setItem("selected-icon", getCurrentIcon());
 });
+
+/* Show SlideShow */
+
+// Thumbnail image controls
+function currentSlide(n, no) {
+  showSlides(slideIndex = n, no);
+}
+
+var slideIndex = [1,1,1,1];
+/* Class the members of each slideshow group with different CSS classes */
+var slideId = ["mySlides0", "mySlides1", "mySlides2", "mySlides3"]
+var dotID = ["dot0", "dot1", "dot2", "dot3"]
+showSlides(1, 0);
+showSlides(1, 1);
+showSlides(1, 2);
+showSlides(1, 3);
+
+function plusSlides(n, no) {
+  showSlides(slideIndex[no] += n, no);
+}
+
+function showSlides(n, no) {
+  var i;
+  var x = document.getElementsByClassName(slideId[no]);
+  var dots = document.getElementsByClassName(dotID[no]);
+  if (n > x.length) {slideIndex[no] = 1}
+  if (n < 1) {slideIndex[no] = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  x[slideIndex[no]-1].style.display = "block";
+  dots[slideIndex[no]-1].className += " active";
+}

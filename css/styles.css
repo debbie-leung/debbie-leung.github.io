@@ -74,7 +74,7 @@ body.dark-theme {
 
 /* Classes modified to reduce size and print on A4 sheet */
 body {
-  margin: 0 0 var(--header-height) 0;
+  margin: 0 0 0 0;
   padding: 0;
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
@@ -129,16 +129,15 @@ img {
 
 /* Layout */
 .bd-container {
-  max-width: 968px;
-  /* 968 */
-  width: calc(100% - 3rem);
+  /* max-width: 1200px;
+  width: calc(100% - 3rem); */
   margin-left: var(--mb-3);
   margin-right: var(--mb-3);
 }
 
 .bd-grid {
   display: grid;
-  gap: 1.5rem;
+  gap: var(--mb-3);
 }
 
 .l-header {
@@ -243,6 +242,7 @@ img {
   height: 120px;
   border-radius: 50%;
   justify-self: center;
+  margin-top: 0;
   margin-bottom: var(--mb-1);
   object-fit: cover;
 }
@@ -290,7 +290,7 @@ img {
   align-items: center;
   font-size: var(--small-font-size);
   color: var(--text-color);
-  margin-bottom: var(--mb-2);
+  /* margin-bottom: var(--mb-2); */
 }
 
 .social__link:hover {
@@ -307,133 +307,149 @@ img {
   text-align: center;
 }
 
-/*======================== EDUCATION AND EXPERIENCE ========================*/
-.education__content,
-.experience__content {
+/*======================== PROJECTS ========================*/
+.project__content {
   display: flex;
 }
 
-.education__time,
-.experience__time {
-  padding-right: 1rem;
-}
-
-.education__rounder,
-.experience__rounder {
-  position: relative;
-  display: block;
-  width: 16px;
-  height: 16px;
-  background-color: var(--text-color-light);
-  border-radius: 50%;
-  margin-top: 0.25rem;
-}
-
-.education__line,
-.experience__line {
-  display: block;
-  width: 2px;
-  height: 110%;
-  background-color: var(--text-color-light);
-  transform: translate(7px, 0);
-}
-
-.education__end {
-  height: 80%;
-}
-
-.experience__end {
-  height: 95%;
-}
-
-.education__data,
-.experience__data {
-  gap: 0.5rem;
-}
-
-.education__title,
-.experience__title {
+.project__title {
   font-size: var(--h3-font-size);
+  color: var(--title-color);
+  font-weight: var(--font-medium);
 }
 
-.education__studies,
-.experience__company {
+.project__company {
   font-size: var(--small-font-size);
   color: var(--title-color);
 }
 
-.education__year {
+.project__description {
+  margin-top: auto;
+  /* margin-bottom: var(--mb-3); */
+}
+
+.project__tool {
+  padding: 1px 5px;
+  color: var(--body-color);
   font-size: var(--smaller-font-size);
+  border-radius: 30px;
 }
 
-.experience__description > li {
-  padding-left: 10px;
-  list-style-type: "-";
-  margin-left: 10px;
-}
-/*======================== SKILLS AND LANGUAGES ========================*/
-
-/* .languages {
-  margin: auto;
-} */
-
-.skills__content,
-.languages__content {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+.project__hardware {
+  background-color: crimson;
 }
 
-/* .skills__data {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(6, 1fr);
-} */
-
-.skills__name,
-.languages__name {
-  justify-self: left;
-  padding-left: 10vw;
+.project__software {
+  background-color: cornflowerblue;
 }
 
-.skills__circle,
-.languages__circle {
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  background-color: var(--text-color);
-  border-radius: 50%;
-  margin-right: 0.75rem;
+.project__topic {
+  background-color: limegreen;
 }
 
-/*======================== AWARDS ========================*/
-.award__title {
-  font-size: var(--small-font-size);
-  margin-bottom: var(--mb-1);
-}
-
-.award__container {
-  gap: 0;
-}
-
-/*======================== INTERESTS ========================*/
-.interests__container {
-  grid-template-columns: repeat(3, 1fr);
+.project__data > p, video, img {
   margin-top: var(--mb-2);
 }
 
-.interests__content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* Slideshow */
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
 }
 
-.interests__icon {
-  font-size: 1.5rem;
+/* Hide the images by default */
+.mySlides0, .mySlides1, .mySlides2, .mySlides3 {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
   color: var(--text-color-light);
-  margin-bottom: 0.25rem;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
 }
 
-/* Scroll Top */
+/* Number text (1/3 etc) */
+.numbertext {
+  color: var(--text-color-light);
+  font-size: 12px;
+  padding: 8px 12px;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+/* The dots/bullets/indicators */
+.dot0, .dot1, .dot2, .dot3 {
+  cursor: pointer;
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+/*======================== Scroll Top ========================*/
+
 .scrolltop {
   position: fixed;
   right: 1rem;
@@ -459,6 +475,13 @@ img {
   bottom: 5rem;
 }
 
+footer {
+  font-size: var(--smallest-font-size);
+  color: var(--text-color-light);
+  text-align: center;
+  margin-bottom: var(--mb-4);
+}
+
 /*======================== MEDIA QUERIES ========================*/
 /* For small devices, menu two columns */
 @media screen and (max-width: 320px) {
@@ -472,32 +495,36 @@ img {
 /* Classes modified for large screen sizes */
 @media screen and (min-width: 968px) {
   body {
-    margin: 3rem 0;
+    /* margin: 3rem 0; */
   }
 
   .bd-container {
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  .l-header,
-  .scrolltop {
+  .l-header{
     display: none;
   }
 
   .resume {
     display: grid;
-    grid-template-columns: 0.5fr 1fr;
+    grid-template-columns: 0.3fr 1fr;
     background-color: var(--container-color);
-    box-shadow: 0 0 8px rgba(13, 12, 12, 0.15);
+    /* box-shadow: 0 0 8px rgba(13, 12, 12, 0.15); */
   }
 
   .resume__left {
     background-color: var(--container-color-alt);
-  }
-
-  .resume__left {
+    table-layout: fixed;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* font-size: 1vw; */
     padding: 1rem 1.5rem;
+    object-fit: cover;
   }
 
   .resume__right {
@@ -509,30 +536,64 @@ img {
     text-align: initial;
   }
 
+  .section-title {
+    margin-bottom: var(--mb-2);
+  }
+  
+  .project-title {
+    top: 0;
+    position: fixed;
+    padding-top: 2rem;
+    z-index: var(--z-fixed);
+    background-color: var(--container-color);
+    display: block;
+    width: 100%
+  }
+
+  .project-title:after
+  {
+      content:' ';
+      display:block;
+      border: 1px solid var(--text-color);
+      width: 70.4%
+  }
+
   .home__information {
     justify-self: initial;
   }
 
-  .social__data,
-  .languages__content {
+  .social__data {
     justify-self: left;
   }
 
-  .social__link,
-  .skills__name,
-  .languages__name {
+  .social__link {
     /* TODO: follow up on margin */
     margin-left: 0;
     padding-left: 0;
+    
   }
 
-  .languages__content {
-    grid-template-columns: repeat(2, 1fr);
+  .profile__description {
+    padding-bottom: var(--mb-3);
+  }
+
+  .project__container {
+    padding-top: 3rem;
+    display: grid;
+    /* grid-template-columns: repeat(autofit, minmax(300px, 1fr)); */
+    grid-template-columns: repeat(3, 1fr);
+    /* overflow: scroll; */
+    /* justify-content: space-between; */
+  }
+
+  .project__content {
+    display: flex;
+    flex-flow: column;
     /* column-gap: 3.5rem; */
   }
 
-  .interests__container {
-    grid-template-columns: repeat(2, max-content);
-    column-gap: 5rem;
+  footer {
+    text-align: right;
+    margin-bottom: 0;
   }
 }
