@@ -575,7 +575,7 @@ footer {
 
   .profile__description {
     padding-bottom: var(--mb-3);
-    font-size: 1vw;
+    /* font-size: 1vw; */
   }
 
   .project__container {
