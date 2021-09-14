@@ -305,7 +305,6 @@ img {
 /*======================== PROFILE ========================*/
 .profile__description {
   text-align: center;
-  font-size: 1vw;
 }
 
 /*======================== PROJECTS ========================*/
@@ -576,6 +575,7 @@ footer {
 
   .profile__description {
     padding-bottom: var(--mb-3);
+    font-size: 1vw;
   }
 
   .project__container {
