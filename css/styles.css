@@ -525,6 +525,7 @@ footer {
     /* font-size: 1vw; */
     padding: 1rem 1.5rem;
     object-fit: cover;
+    overflow-y: auto;
   }
 
   .resume__right {
