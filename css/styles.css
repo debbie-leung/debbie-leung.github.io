@@ -31,6 +31,7 @@
   --mb-2: 1rem;
   --mb-3: 1.5rem;
   --mb-4: 3rem;
+  --mb-5: 5rem;
 
   /* z index */
   --z-tooltip: 10;
@@ -119,12 +120,26 @@ img {
 
 .section-title {
   font-size: var(--h2-font-size);
-  color: var(--title-color);
+  color: var(--text-color-light);
   font-weight: var(--font-semi-bold);
   text-transform: uppercase;
-  letter-spacing: 0.35rem;
+  letter-spacing: 0.2rem;
   text-align: center;
   margin-bottom: var(--mb-3);
+  padding-right: 0.5rem;
+}
+
+.project-title {
+  margin-bottom: var(--mb-3);
+}
+
+.project-title a:hover {
+  color: var(--text-color);
+}
+
+/* Add a color to the active/current link */
+#active-link {
+  color: var(--title-color);
 }
 
 /* Layout */
@@ -192,7 +207,7 @@ img {
 .nav__list {
   display: grid;
   /* TODO: tutorial has this set as 1fr */
-  grid-template-columns: repeat(3, 0.27fr);
+  grid-template-columns: repeat(3, auto);
   gap: 2rem;
 }
 
@@ -325,6 +340,7 @@ img {
 
 .project__description {
   margin-top: auto;
+  text-align: justify;
   /* margin-bottom: var(--mb-3); */
 }
 
@@ -452,7 +468,7 @@ img {
 
 .scrolltop {
   position: fixed;
-  right: 1rem;
+  right: 1.15rem;
   bottom: -20%;
   display: flex;
   justify-content: center;
@@ -479,7 +495,7 @@ footer {
   font-size: var(--smallest-font-size);
   color: var(--text-color-light);
   text-align: center;
-  margin-bottom: var(--mb-4);
+  margin-bottom: 4rem;
 }
 
 /*======================== MEDIA QUERIES ========================*/
@@ -487,7 +503,7 @@ footer {
 @media screen and (max-width: 320px) {
   .nav__list {
     /* TODO: tutorial has this set as 1fr */
-    grid-template-columns: repeat(2, 0.42fr);
+    grid-template-columns: repeat(2, auto);
     gap: 1rem 0.5rem;
   }
 }
@@ -547,16 +563,23 @@ footer {
     padding-top: 2rem;
     z-index: var(--z-fixed);
     background-color: var(--container-color);
-    display: block;
-    width: 100%
+    display: flex;
+    width: 72%;
+    border-bottom: 3px solid var(--text-color);
   }
 
-  .project-title:after
+  /* .project-title:after
   {
-      content:' ';
-      display:block;
+      content: ' ';
+      display: block;
       border: 1px solid var(--text-color);
-      width: 70.4%
+      width: 70.4%;
+      margin-top: 0.8rem;
+  } */
+
+  .nav-bar {
+    width: 33.33333%;
+    text-align: center;
   }
 
   .home__information {
@@ -594,8 +617,12 @@ footer {
     /* column-gap: 3.5rem; */
   }
 
+  .show-scroll {
+    bottom: var(--mb-4);
+  }
+
   footer {
     text-align: right;
-    margin-bottom: 0;
+    margin-bottom: 0rem;
   }
 }

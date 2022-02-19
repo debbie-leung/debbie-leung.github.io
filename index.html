@@ -38,8 +38,18 @@
               </a>
             </li>
             <li class="nav__item">
-              <a href="#project" class="nav__link">
-                <i class="fas fa-wrench nav__icon"></i>Projects
+              <a href="#tech" class="nav__link">
+                <i class="fas fa-wrench nav__icon"></i>Tech
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#biology" class="nav__link">
+                <i class="fas fa-regular fa-dna nav__icon"></i>Biology
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#publication" class="nav__link">
+                <i class="fas fa-solid fa-pen-nib nav__icon"></i>Publications
               </a>
             </li>
           </ul>
@@ -132,10 +142,15 @@
         <div class="resume__right">
           <!-- Projects -->
           <section class="project section" id="project">
-          <div class="project-title">
-            <h2 class="section-title">Technical Projects</h2>
-          </div>
-            <div class="project__container bd-grid">
+            <div class="project-title">
+              <a class="section-title nav-bar active-link" href="#tech" onclick="openContent(this, 'tech')">Technical Projects</a>
+              <span class="section-title">|</span>
+              <a class="section-title nav-bar" href="#biology" onclick="openContent(this, 'biology')">Biological Projects</a>
+              <span class="section-title">|</span>
+              <a class="section-title nav-bar" href="#publication" onclick="openContent(this, 'publication')">Publications</a>
+            </div>
+
+            <div id="tech" class="project__container bd-grid field">
               <article class="project__content">
 
                 <div class="project__data">
@@ -294,7 +309,7 @@
               <article class="project__content">
 
                 <div class="project__data">
-                  <p><span class="project__title">Object Segmentation and Pose Estimation    </span><span class="project__tool project__software" style=>Python</span>     <span class="project__tool project__software" style=>PyTorch</span>     <span class="project__tool project__software" style=>GCP</span>     <span class="project__tool project__topic" style=>Graphics</span></p>
+                  <p><span class="project__title">Object Segmentation and Pose Estimation    </span>  <span class="project__tool project__software" style=>PyTorch</span>     <span class="project__tool project__software" style=>GCP</span>     <span class="project__tool project__topic" style=>Graphics</span></p>
                   
                   <!-- Slideshow container -->
                   <div class="slideshow-container">
@@ -330,7 +345,7 @@
                     <span class="dot1" onclick="currentSlide(3,1)"></span>
                   </div>
 
-                  <p class="project__description"> Constructed a neural network to perform segmentation using RGB images and ground truth instance segmentation masks from simulated camera.The model is then used with depth images to estimate object pose.</p>
+                  <p class="project__description"> Constructed a neural network to perform segmentation using RGB images and ground truth instance segmentation masks from simulated camera. The model is then used with depth images to estimate object pose.</p>
                     
                 </div>
               </article>
@@ -390,11 +405,115 @@
               </article>
 
             </div>
+
+            <div id="biology" class="project__container bd-grid field" style="display:none">
+
+              <article class="project__content">
+
+                <div class="project__data">
+                  <p><span class="project__title">Functional and Genetic Regulation of Thermal Stress in Intertidal Mussels    </span><span class="project__tool project__hardware" style=>RNA Sequencing</span>     <span class="project__tool project__software" style=>R</span>     <span class="project__tool project__software" style=>HPC</span>     <span class="project__tool project__topic" style=>Molecular Ecology</span></p>
+                  
+                  <a href="media/final_thesis.pdf" target="_blank">
+                  <img src="media/thesis.png" alt="Senior Thesis Poster" style="width:100%">
+                </a>
+
+                  <p class="project__description">Conducted funded senior thesis that investigates the physiological and molecular mechanisms of thermal regulation in mussels. Undertook heat ramping experiments to measure physiological variables and perform RNA sequencing. Analyzed physiological data using R and performed bioinformatics on gene expression profiles using high performance computing. </p>
+                    
+                </div>
+              </article>
+
+              <article class="project__content">
+
+                <div class="project__data">
+                  <p><span class="project__title">Genetic Basis of Red and Blue Coloration in Betta Splendens    </span><span class="project__tool project__hardware" style=>DNA Extraction</span>     <span class="project__tool project__software" style=>Matlab</span>     <span class="project__tool project__topic" style=>Genetics</span></p>
+                  
+                  <a href="media/bendesky_presentation.pdf" target="_blank">
+                  <img src="media/bendesky.png" alt="Betta Splendens Presentation" style="width:100%">
+                </a>
+
+                  <p class="project__description">Assisted with data collection of color phenotypes and genomes of the Siamese fighting fish to study the consequences of domestication by taking fin-clips and photos from live fish, managing the fish database, setting up lab-based behavioral assays, performing tissue preparation, next-generation sequencing and in-situ hybridization. Carried out image analysis on fin morphology of Betta Splendens using ImageJ and Matlab. </p>
+                    
+                </div>
+              </article>
+
+              <article class="project__content">
+
+                <div class="project__data">
+                  <p><span class="project__title">Cobbling Together Biodiversity Patterns within Kelp Forest Ecosystems    </span><span class="project__tool project__hardware" style=>DNA Extraction</span>     <span class="project__tool project__software" style=>Linux</span>     <span class="project__tool project__topic" style=>Molecular Ecology</span></p>
+                  
+                  <img src="media/hopkins_poster.png" alt="Laidlaw Scholars Poster at Columbia Undergraduate Research Symposium" style="width:100%">
+
+                  <p class="project__description">Performed DNA metabarcoding on cobbles covered with crustose coralline algae by carrying out molecular lab work including DNA extraction, PCR, library preparation and bioinformatic analysis of DNA sequencing FASTQ files using Linux, Python, R and BLAST to characterize the biodiversity of kelp forests along the Californian coast.
+                    </p>
+                    
+                </div>
+              </article>
+
+              <article class="project__content">
+
+                <div class="project__data">
+                  <p><span class="project__title">Ecological drivers of group-living in sponge-dwelling Elacatinus lori gobies    </span><span class="project__tool project__hardware" style=>Underwater visual census</span>     <span class="project__tool project__software" style=>MeshLab</span>     <span class="project__tool project__topic" style=>Behavioural Ecology</span></p>
+                  
+                  <img src="media/belize.png" alt="Belize Gobies Presentation" style="width:100%">
+
+                  <p class="project__description">Received funding to assist in marine field expedition to Glover's Reef Research Station in Belize to study the social structure of Elacatinus lori. Designed and assembled aquarium, performed animal care, conducted underwater visual census of E. lori distribution in tubular sponges, sexed and tagged fish, devised and assisted in field experiments.</p>
+                    
+                </div>
+              </article>
+              
+
+            </div>
+
+            <div id="publication" class="project__container bd-grid field" style="display:none">
+              <article class="project__content">
+
+                <div class="project__data">
+                  <p><span class="project__title">Youth Activism in Climate Change Education    </span><span class="project__tool project__topic" style=>Climate Education</span></p>
+                  
+                  <a href="media/climate_paper.pdf" target="_blank">
+                  <img src="media/climate.png" alt="Published Paper in School Science Review" style="width:100%">
+                  </a>
+
+                  <p class="project__description">Safaya, S., Rines, M.L., <b>Leung, D.S.K.</b>, Pang, H.L.T., Yeung, Y., Gobbi, G., Asinas, C., Schaefer, E.A.; Yu, C.K.Y., Lamond, S., Juels, T., Chu, A., Fung, H.C., Chung, C.H.V., Chung, H.L.L., Yung, Z.S., Lun, H.H.M., Ng, C.Y.J. (2021). Listening to youth: how to close the knowledge-action gap in climate change education.  <i>School Science Review, vol. 103, issue 383.</i> <a href="media/climate_paper.pdf"><i class="fas fa-solid fa-link"></i></a></p>
+                    
+                </div>
+              </article>
+
+              <article class="project__content">
+
+                <div class="project__data">
+                  <p><span class="project__title">Species Description of Barentsiidae and Loxosomatidae Families    </span><span class="project__tool project__topic" style=>Marine Zoology</span></p>
+                  
+                  <a href="https://www.gbri.org.au//SpeciesList//StudentProject2020%7CSinKiDebbieLeung#Section4187" target="_blank">
+                  <img src="media/entoprocta.png" alt="Published Literature Review on Entoprocta" style="width:100%">
+                  </a>
+
+                  <p class="project__description"><b>Leung, Debbie</b> (2020). Comparison and Contrast of Barentsiidae and Loxosomatidae in terms of Life History, Behavior, Anatomy, Physiology, Ecology, Systematics and Biogeographical Distribution. <i>Invertebrates of the Coral Sea</i>. <a href="https://www.gbri.org.au//SpeciesList//StudentProject2020%7CSinKiDebbieLeung#Section4185"><i class="fas fa-solid fa-link"></i></a></p>
+                    
+                </div>
+              </article>
+
+              <article class="project__content">
+
+                <div class="project__data">
+                  <p><span class="project__title">Opinion Piece on Career Choices in Hong Kong    </span><span class="project__tool project__topic" style=>Higher Education</span></p>
+                  
+                  <a href="https://www.scmp.com/comment/insight-opinion/article/2131600/hong-kong-students-dont-have-be-doctors-they-should-pursue" target="_blank">
+                  <img src="media/scmp.png" alt="Published Op-Ed on SCMP" style="width:100%">
+                  </a>
+
+                  <p class="project__description"><b>Leung, Debbie</b> (2018). Hong Kong students don't have to be doctors -- they should pursue careers that matter to them. <i>South China Morning Post</i>. <a href="https://www.scmp.com/comment/insight-opinion/article/2131600/hong-kong-students-dont-have-be-doctors-they-should-pursue"><i class="fas fa-solid fa-link"></i></a></p>
+                    
+                </div>
+              </article>
+              
+            </div>
           </section>
 
-        <footer>
-        <p>©2021 Website hand coded in HTML, CSS and JavaScript, with design inspired by <a href="https://www.youtube.com/watch?v=oYjseP_Qhv4">Bedimcode</a>.</p>
-      </footer>
+          <footer>
+            <p>©2022 Website hand coded in HTML, CSS and JavaScript, with design inspired by <a href="https://www.youtube.com/watch?v=oYjseP_Qhv4">Bedimcode</a>.</p>
+          </footer>
+
         </div>
       </div>
     </main>

@@ -131,3 +131,20 @@ function showSlides(n, no) {
   x[slideIndex[no]-1].style.display = "block";
   dots[slideIndex[no]-1].className += " active";
 }
+
+/* SHOW PROJECT TABS */
+function openContent(object, fieldName) {
+  var x = document.getElementsByClassName("section-title");
+  var i;
+  for (i = 0; i < x.length; i++) {
+    x[i].classList.remove("active-link");
+  }
+  object.classList.add("active-link");
+  var i;
+  var x = document.getElementsByClassName("field");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  document.getElementById(fieldName).style.display = "grid"; 
+
+}
