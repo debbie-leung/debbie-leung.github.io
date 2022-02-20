@@ -129,8 +129,12 @@ img {
   padding-right: 0.5rem;
 }
 
-.project-title {
+.project-title-mobile {
   margin-bottom: var(--mb-3);
+}
+
+.project-title {
+  display: none;
 }
 
 .project-title a:hover {
@@ -206,7 +210,6 @@ img {
 
 .nav__list {
   display: grid;
-  /* TODO: tutorial has this set as 1fr */
   grid-template-columns: repeat(3, auto);
   gap: 2rem;
 }
@@ -557,6 +560,11 @@ footer {
     margin-bottom: var(--mb-2);
   }
   
+  .project-title-mobile {
+    display: none;
+    margin-bottom: var(--mb-3);
+  }
+
   .project-title {
     top: 0;
     position: fixed;
@@ -580,6 +588,10 @@ footer {
   .nav-bar {
     width: 33.33333%;
     text-align: center;
+  }
+
+  #biology, #publication {
+    display: none;
   }
 
   .home__information {

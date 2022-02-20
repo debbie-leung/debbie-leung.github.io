@@ -145,6 +145,6 @@ function openContent(object, fieldName) {
   for (i = 0; i < x.length; i++) {
     x[i].style.display = "none";  
   }
-  document.getElementById(fieldName).style.display = "grid"; 
+  document.getElementById(fieldName).style.display = "block"; 
 
 }
