@@ -3,8 +3,6 @@ import { Container } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import ImageCard from '../reusables/Card';
 import avrHardware from '../media/avr_hardware.jpg';
-import Paper from '@mui/material/Paper';
-import { styled } from '@mui/material/styles';
 const Projects = () => {
   const projects = [
     {
