@@ -6,23 +6,30 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Tag from './Tag';
-import { CardHeader } from '@mui/material';
+import { CardHeader, ChipProps } from '@mui/material';
+import { TagColor } from '../types/TagColor';
+
+interface Tag {
+    name: string;
+    color: TagColor;
+}
 
 interface ImageCardProps {
     image: string;
     title: string;
+    tags: Tag[];
     description: string;
 }
 
-export default function ImageCard({ image, title, description }: ImageCardProps) {
+export default function ImageCard({ image, title, tags, description }: ImageCardProps) {
     return (
         <Card sx={{ maxWidth: 345 }} elevation={0}>
             <CardHeader
                 title={title}
                 subheader={<>
-                    <Tag name="tool" color="tool" />
-                    <Tag name="technology" color="technology" />
-                    <Tag name="topic" color="topic" />
+                    {tags.map((tag, index) => (
+                        <Tag key={index} name={tag.name} color={tag.color} />
+                    ))}
                 </>}
             />
             <CardMedia

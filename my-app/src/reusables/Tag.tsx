@@ -13,15 +13,13 @@ declare module '@mui/material/Chip' {
 
 interface TagProps {
     name: string;
-    variant?: 'filled' | 'outlined';
-    color?: ChipProps['color'] | 'tool' | 'technology' | 'topic';
+    color: ChipProps['color'];
 }
 
-export default function Tag({ name, variant = 'filled', color = 'default' }: TagProps) {
+export default function Tag({ name, color }: TagProps) {
     return (
         <Chip 
         label={name}
-        variant={variant}
         color={color}
         />
     );
