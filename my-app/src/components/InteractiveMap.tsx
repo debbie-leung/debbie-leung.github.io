@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tooltip, Box } from '@mui/material';
-import mapImage from '../media/world_map.png'; // Import your track image
+import mapImage from '../media/world_map.png';
 
 const InteractiveMap = () => {
   const hotspots = [

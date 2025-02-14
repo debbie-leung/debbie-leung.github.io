@@ -1,15 +1,22 @@
 import React from 'react';
-import './App.css';
-import { ThemeProvider } from '@mui/material/styles';
-import theme from './theme';
-import Projects from './components/Projects';
+import { Container, Typography, Paper, AppBar, Toolbar, Avatar, Button, Box, Divider, IconButton } from '@mui/material';
+import Grid from '@mui/material/Grid2';
+import Profile from './components/Profile';
+import InteractiveMap from './components/InteractiveMap';
 
-function App() {
+const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <Projects />
-    </ThemeProvider>
+    <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={1}>
+        <Grid size={3}>
+          <Profile />
+        </Grid>
+        <Grid size={9}>
+          <InteractiveMap />
+        </Grid>
+      </Grid>
+  </Box>
   );
-}
+};
 
 export default App;
