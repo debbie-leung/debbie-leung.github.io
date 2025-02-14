@@ -1,8 +1,9 @@
 import React from 'react';
-import { Container, Typography, Paper, AppBar, Toolbar, Avatar, Button, Box, Divider, IconButton } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import Profile from './components/Profile';
-import InteractiveMap from './components/InteractiveMap';
+import Box from '@mui/material/Box';
+import TabContent from './components/TabContent';
+import { Typography } from '@mui/material';
 
 const App = () => {
   return (
@@ -12,7 +13,12 @@ const App = () => {
           <Profile />
         </Grid>
         <Grid size={9}>
-          <InteractiveMap />
+          <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+            <Box sx={{ flexGrow: 1 }}>
+              <TabContent />
+            </Box>
+            <Typography sx={{ textAlign: 'right', marginBottom: 2 }}>©2025 Website coded in React and Material UI</Typography>
+          </Box>
         </Grid>
       </Grid>
   </Box>

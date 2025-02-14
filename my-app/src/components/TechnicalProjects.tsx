@@ -3,7 +3,7 @@ import { Container } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import ImageCard from '../reusables/Card';
 import avrHardware from '../media/avr_hardware.jpg';
-const Projects = () => {
+const TechnicalProjects = () => {
   const projects = [
     {
       title: "AVR Hardware",
@@ -30,4 +30,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default TechnicalProjects;
