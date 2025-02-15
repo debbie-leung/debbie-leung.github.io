@@ -6,22 +6,15 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Tag from './Tag';
-import { CardHeader, ChipProps } from '@mui/material';
+import { CardHeader } from '@mui/material';
 import { TagColor } from '../types/TagColor';
-
+import { Project } from '../components/Projects';
 interface Tag {
     name: string;
     color: TagColor;
 }
 
-interface ImageCardProps {
-    image: string;
-    title: string;
-    tags: Tag[];
-    description: string;
-}
-
-export default function ImageCard({ image, title, tags, description }: ImageCardProps) {
+export default function ImageCard({ image, mediaType, title, tags, description }: Project) {
     return (
         <Card sx={{ maxWidth: 345 }} elevation={0}>
             <CardHeader
@@ -33,10 +26,10 @@ export default function ImageCard({ image, title, tags, description }: ImageCard
                 </>}
             />
             <CardMedia
-                component="img"
-                alt="belize"
-                height="200"
-                image={image}
+                component={mediaType}
+                src={image}
+                width="300"
+                controls={mediaType === 'video'}
             />
             <CardContent>
                 <Typography variant="body2" sx={{ color: 'text.secondary' }}>

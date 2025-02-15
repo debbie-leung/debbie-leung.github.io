@@ -7,6 +7,8 @@ import TabPanel from '@mui/lab/TabPanel';
 import InteractiveMap from './InteractiveMap';
 import Projects from './Projects';
 import { technicalProjects } from '../data/TechnicalProjects';
+import { biologyProjects } from '../data/BiologyProjects';
+import { publications } from '../data/Publications';
 
 const TabContent = () => {
     const [value, setValue] = React.useState('1');
@@ -27,12 +29,17 @@ const TabContent = () => {
             </TabList>
             </Box>
             <TabPanel value="1">
-            <InteractiveMap />
+                <InteractiveMap />
             </TabPanel>
             <TabPanel value="2">
-            <Projects projects={technicalProjects} />
+                <Projects projects={technicalProjects} />
             </TabPanel>
-            <TabPanel value="3">Item Three</TabPanel>
+            <TabPanel value="3">
+                <Projects projects={biologyProjects} />
+            </TabPanel>
+            <TabPanel value="4">
+                <Projects projects={publications} />
+            </TabPanel>
         </TabContext>
     </Box>
   );
