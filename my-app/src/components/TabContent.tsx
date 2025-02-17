@@ -9,6 +9,7 @@ import Projects from './Projects';
 import { technicalProjects } from '../data/TechnicalProjects';
 import { biologyProjects } from '../data/BiologyProjects';
 import { publications } from '../data/Publications';
+import travelSpots from '../data/TravelSpots';
 
 const TabContent = () => {
     const [value, setValue] = React.useState('1');
@@ -29,7 +30,7 @@ const TabContent = () => {
             </TabList>
             </Box>
             <TabPanel value="1">
-                <InteractiveMap />
+                <InteractiveMap hotspots={travelSpots} />
             </TabPanel>
             <TabPanel value="2">
                 <Projects projects={technicalProjects} />
