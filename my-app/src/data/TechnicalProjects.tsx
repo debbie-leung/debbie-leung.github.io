@@ -1,17 +1,30 @@
 import { TagColor } from "../types/TagColor";
 import { Project } from "../components/Projects";
 import { MediaType } from "../types/MediaType";
-import avrHardware from '../media/avr_hardware.jpg';
 import dumboOctopus from '../media/dumbo_robot.mp4';
 import wallE from '../media/wall-e.gif';
 import rrt from '../media/rrt.gif';
 import objectTracking from '../media/object_tracking.gif';
 import wallEMap from '../media/walle_map.gif';
+import genbioHome from '../media/genbio_home.png';
+import genbioLogin from '../media/genbio_login.png';
+import genbioRegistration from '../media/genbio_registration.png';
+import avrHardware from '../media/avr_hardware.jpg';
+import avrPlay from '../media/avr_play.jpg';
+import avrCartoon from '../media/avr_cartoon.png';
+import rgb from '../media/4_rgb.png';
+import predMask from '../media/4_pred_mask.png';
+import mesh from '../media/4_mesh01.png';
+import booleanArray from '../media/boolean_array.png';
+import orientation from '../media/orientation.png';
+import voxels from '../media/voxels.png';
+import perspective from '../media/perspective.png';
+import houghLine from '../media/hough_line.png';
 
 export const technicalProjects: Project[] = [
     {
       title: "Dumbo Octopus Dancing Robot", 
-      image: dumboOctopus,
+      media: [dumboOctopus],
       mediaType: MediaType.Video,
       tags: [
         { name: "CUDA", color: TagColor.Tool },
@@ -24,7 +37,7 @@ export const technicalProjects: Project[] = [
     },
     {
       title: "3D Reconstruction of Wall-E Robot",
-      image: wallE,
+      media: [wallE],
       mediaType: MediaType.Image,
       tags: [
         { name: "MeshLab", color: TagColor.Tool },
@@ -35,7 +48,7 @@ export const technicalProjects: Project[] = [
     },
     {
       title: "GenBio Database",
-      image: avrHardware,
+      media: [genbioHome, genbioLogin, genbioRegistration],
       mediaType: MediaType.Image,
       tags: [
         { name: "HTML", color: TagColor.Technology },
@@ -49,7 +62,7 @@ export const technicalProjects: Project[] = [
     },
     {
       title: "Pick and Place Robotic Path-Planning",
-      image: rrt,
+      media: [rrt],
       mediaType: MediaType.Image,
       tags: [
         { name: "Python", color: TagColor.Technology },
@@ -61,7 +74,7 @@ export const technicalProjects: Project[] = [
     },
     {
       title: "Histogram Based Object Tracking",
-      image: objectTracking,
+      media: [objectTracking],
       mediaType: MediaType.Image,
       tags: [
         { name: "Matlab", color: TagColor.Technology },
@@ -71,7 +84,7 @@ export const technicalProjects: Project[] = [
     },
     {
       title: "Learning-Based Self-Driving Robot",
-      image: wallEMap,
+      media: [wallEMap],
       mediaType: MediaType.Image,
       tags: [
         { name: "Python", color: TagColor.Technology },
@@ -83,7 +96,7 @@ export const technicalProjects: Project[] = [
     },
     {
       title: "Space Impact",
-      image: avrHardware,
+      media: [avrHardware, avrPlay, avrCartoon],
       mediaType: MediaType.Image,
       tags: [
         { name: "Atmel Studio", color: TagColor.Tool },
@@ -95,7 +108,7 @@ export const technicalProjects: Project[] = [
     },
     {
       title: "Object Segmentation and Pose Estimation",
-      image: avrHardware,
+      media: [rgb, predMask, mesh],
       mediaType: MediaType.Image,
       tags: [
         { name: "PyTorch", color: TagColor.Technology },
@@ -106,7 +119,7 @@ export const technicalProjects: Project[] = [
     },
     {
       title: "Object Detection and Properties Computation",
-      image: avrHardware,
+      media: [booleanArray, orientation, voxels, perspective, houghLine],
       mediaType: MediaType.Image,
       tags: [
         { name: "Python", color: TagColor.Technology },

@@ -7,8 +7,9 @@ import { MediaType } from '../types/MediaType';
 
 export interface Project {
   title: string;
-  image: string;
+  media: string[];
   mediaType: MediaType;
+  mediaLink?: string;
   tags: { name: string; color: TagColor }[];
   description: string;
 }

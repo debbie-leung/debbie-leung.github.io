@@ -4,12 +4,14 @@ import { TagColor } from "../types/TagColor";
 import climatePaper from '../media/climate.png';
 import entoproctaWebsite from '../media/entoprocta.png';
 import scmpPost from '../media/scmp.png';
+import climatePaperPDF from '../media/climate_paper.pdf';
 
 export const publications: Project[] = [
     {
         title: "Youth Activism in Climate Change Education",
-        image: climatePaper,
+        media: [climatePaper],
         mediaType: MediaType.Image,
+        mediaLink: climatePaperPDF,
         tags: [
             { name: "Climate Change", color: TagColor.Topic },
         ],
@@ -17,8 +19,9 @@ export const publications: Project[] = [
     },
     {
         title: "Species Description of Barentsiidae and Loxosomatidae Families",
-        image: entoproctaWebsite,
+        media: [entoproctaWebsite],
         mediaType: MediaType.Image,
+        mediaLink: "https://www.gbri.org.au//SpeciesList//StudentProject2020%7CSinKiDebbieLeung#Section4187",
         tags: [
             { name: "Marine Zoology", color: TagColor.Topic },
         ],
@@ -26,8 +29,9 @@ export const publications: Project[] = [
     },
     {
         title: "Opinion Piece on Career Choices in Hong Kong",
-        image: scmpPost,
+        media: [scmpPost],
         mediaType: MediaType.Image,
+        mediaLink: "https://www.scmp.com/comment/insight-opinion/article/2131600/hong-kong-students-dont-have-be-doctors-they-should-pursue",
         tags: [
             { name: "Higher Education", color: TagColor.Topic },
         ],

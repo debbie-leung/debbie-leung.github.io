@@ -3,14 +3,17 @@ import { TagColor } from "../types/TagColor";
 import { MediaType } from "../types/MediaType";
 import belizePowerpoint from '../media/belize.png';
 import thesisPoster from '../media/thesis.png';
+import finalThesisPDF from '../media/final_thesis.pdf';
 import hopkinsPoster from '../media/hopkins_poster.png';
 import bendeskyPowerpoint from '../media/bendesky.png';
+import bendeskyPresentation from '../media/bendesky_presentation.pdf';
 
 export const biologyProjects: Project[] = [
     {
         title: "Functional and Genetic Regulation of Thermal Stress in Intertidal Mussels",
-        image: thesisPoster,
+        media: [thesisPoster],
         mediaType: MediaType.Image,
+        mediaLink: finalThesisPDF,
         tags: [
             { name: "RNA Sequencing", color: TagColor.Tool },
             { name: "R", color: TagColor.Technology },
@@ -21,8 +24,9 @@ export const biologyProjects: Project[] = [
     },
     {
         title: "Genetic Basis of Red and Blue Coloration in Betta Splendens",
-        image: bendeskyPowerpoint,
+        media: [bendeskyPowerpoint],
         mediaType: MediaType.Image,
+        mediaLink: bendeskyPresentation,
         tags: [
             { name: "DNA Extraction", color: TagColor.Tool },
             { name: "Matlab", color: TagColor.Technology },
@@ -32,7 +36,7 @@ export const biologyProjects: Project[] = [
     },
     {
         title: "Cobbling Together Biodiversity Patterns within Kelp Forest Ecosystems",
-        image: hopkinsPoster,
+        media: [hopkinsPoster],
         mediaType: MediaType.Image,
         tags: [
             { name: "DNA Extraction", color: TagColor.Tool },
@@ -43,7 +47,7 @@ export const biologyProjects: Project[] = [
     },
     {
         title: "Ecological Drivers of Group-Living in Sponge-Dwelling Elacatinus Lori Gobies",
-        image: belizePowerpoint,
+        media: [belizePowerpoint],
         mediaType: MediaType.Image,
         tags: [
             { name: "Underwater visual census", color: TagColor.Tool },
