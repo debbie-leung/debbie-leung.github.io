@@ -1,18 +1,22 @@
 import { createTheme } from '@mui/material/styles';
-import { TagColor } from './enums/TagColor';
+import { Color } from './enums/Color';
 
 // Augment the palette to include a salmon color
 declare module '@mui/material/styles' {
   interface Palette {
-    [TagColor.Tool]: Palette['primary'];
-    [TagColor.Technology]: Palette['primary'];
-    [TagColor.Topic]: Palette['primary'];
+    [Color.Red]: Palette['primary'];
+    [Color.Green]: Palette['primary'];
+    [Color.Blue]: Palette['primary'];
+    [Color.Yellow]: Palette['primary'];
+    [Color.Purple]: Palette['primary'];
   }
 
   interface PaletteOptions {
-    [TagColor.Tool]?: PaletteOptions['primary'];
-    [TagColor.Technology]?: PaletteOptions['primary'];
-    [TagColor.Topic]?: PaletteOptions['primary'];
+    [Color.Red]?: PaletteOptions['primary'];
+    [Color.Green]?: PaletteOptions['primary'];
+    [Color.Blue]?: PaletteOptions['primary'];
+    [Color.Yellow]?: PaletteOptions['primary'];
+    [Color.Purple]?: PaletteOptions['primary'];
   }
 }
 
@@ -34,24 +38,37 @@ let theme = createTheme({
 theme = createTheme(theme, {
   // Custom colors created with augmentColor go here
   palette: {
-    [TagColor.Tool]: theme.palette.augmentColor({
+    [Color.Red]: theme.palette.augmentColor({
       color: {
         main: '#dc143c',
       },
-      name: TagColor.Tool,
+      name: Color.Red,
     }),
-    [TagColor.Technology]: theme.palette.augmentColor({
+    [Color.Blue]: theme.palette.augmentColor({
       color: {
         main: '#6495ED',
       },
-      name: TagColor.Technology,
+      name: Color.Blue,
     }),
-    [TagColor.Topic]: theme.palette.augmentColor({
+    [Color.Green]: theme.palette.augmentColor({
       color: {
         main: '#32CD32',
       }, 
-      name: TagColor.Topic,
+      name: Color.Green,
     }),
+    [Color.Yellow]: theme.palette.augmentColor({
+      color: {
+        main: '#FFFF00',
+      },
+      name: Color.Yellow,
+    }),
+    [Color.Purple]: theme.palette.augmentColor({
+      color: {
+        main: '#800080',
+      },
+      name: Color.Purple,
+    }),
+    
   },
 });
 

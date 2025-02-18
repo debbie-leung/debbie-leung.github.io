@@ -30,7 +30,7 @@ export default function ImageCard({ media, mediaType, mediaLink, title, tags, de
                 title={title}
                 subheader={<>
                     {tags.map((tag, index) => (
-                        <Tag key={index} name={tag.name} color={tag.color} />
+                        <Tag key={index} name={tag.name} category={tag.category} />
                     ))}
                 </>}
             />

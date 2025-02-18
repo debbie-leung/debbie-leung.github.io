@@ -1,6 +1,6 @@
 import React from 'react';
 import { Autocomplete, Chip, TextField } from '@mui/material';
-import { TagProps } from '../reusables/Tag';
+import { tagCategoryColors, TagProps } from '../reusables/Tag';
 
 interface FilterBarProps {
   options: TagProps[];
@@ -17,7 +17,7 @@ const FilterBar = ({ options, value, onChange }: FilterBarProps) => {
       getOptionLabel={(option) => option?.name}
       value={value}
       onChange={(event, newValue) => onChange(newValue)}
-      groupBy={(option) => option.color}
+      groupBy={(option) => option.category}
       renderTags={(tagValue, getTagProps) =>
         tagValue.map((option, index) => {
           const tagProps = getTagProps({ index });
@@ -25,7 +25,7 @@ const FilterBar = ({ options, value, onChange }: FilterBarProps) => {
             <Chip
               key={tagProps.key}
               label={option.name}
-              color={option.color}
+              color={tagCategoryColors[option.category]}
               {...tagProps}
             />
           );
@@ -35,7 +35,7 @@ const FilterBar = ({ options, value, onChange }: FilterBarProps) => {
         const { key, ...restProps } = props; 
         return (
           <li key={key} {...restProps}>
-            <Chip label={option.name} color={option.color} /> 
+            <Chip label={option.name} color={tagCategoryColors[option.category]} /> 
           </li>
         );
       }}

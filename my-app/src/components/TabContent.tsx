@@ -34,10 +34,10 @@ const TabContent = () => {
             const newFilterOptions = uniqueTagNames.map(name => {
                 return allTags.find(tag => tag.name === name)!;
             });
-            // Sort tags by color to group them together
+            // Sort tags by category to group them together
             newFilterOptions.sort((a, b) => {
-                if (a.color < b.color) return -1;
-                if (a.color > b.color) return 1;
+                if (a.category < b.category) return -1;
+                if (a.category > b.category) return 1;
                 return 0;
             });
             setFilterOptions(newFilterOptions);
