@@ -5,9 +5,9 @@ import { TagColor } from '../types/TagColor';
 // Update the Chip's color options to include custom colors
 declare module '@mui/material/Chip' {
     interface ChipPropsColorOverrides {
-        tool: true,
-        technology: true,
-        topic: true,
+        [TagColor.Tool]: true,
+        [TagColor.Technology]: true,
+        [TagColor.Topic]: true,
     }
 }
 

@@ -31,7 +31,7 @@ const Projects = ({ projects, selectedFilters }: ProjectProps) => {
     <Container maxWidth={false}>
       <Grid container spacing={0}>
         {selectedProjects.map((project, index) => (
-          <Grid size={4}>
+          <Grid key={index} size={4}>
             <ImageCard {...project} />
           </Grid>
         ))}

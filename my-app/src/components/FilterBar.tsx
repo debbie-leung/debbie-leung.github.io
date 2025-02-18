@@ -1,5 +1,5 @@
 import React from 'react';
-import { Autocomplete, TextField } from '@mui/material';
+import { Autocomplete, Chip, TextField } from '@mui/material';
 import { TagProps } from '../reusables/Tag';
 
 interface FilterBarProps {
@@ -17,6 +17,28 @@ const FilterBar = ({ options, value, onChange }: FilterBarProps) => {
       getOptionLabel={(option) => option?.name}
       value={value}
       onChange={(event, newValue) => onChange(newValue)}
+      groupBy={(option) => option.color}
+      renderTags={(tagValue, getTagProps) =>
+        tagValue.map((option, index) => {
+          const tagProps = getTagProps({ index });
+          return (
+            <Chip
+              key={tagProps.key}
+              label={option.name}
+              color={option.color}
+              {...tagProps}
+            />
+          );
+        })
+      }
+      renderOption={(props, option) => {
+        const { key, ...restProps } = props; 
+        return (
+          <li key={key} {...restProps}>
+            <Chip label={option.name} color={option.color} /> 
+          </li>
+        );
+      }}
       renderInput={(params) => (
         <TextField
           {...params}

@@ -1,7 +1,7 @@
 export enum TagColor {
-    Tool = 'tool',
-    Technology = 'technology',
-    Topic = 'topic',
+    Tool = 'Tool',
+    Technology = 'Technology',
+    Topic = 'Topic',
     Default = 'default',
     Primary = 'primary',
     Secondary = 'secondary',

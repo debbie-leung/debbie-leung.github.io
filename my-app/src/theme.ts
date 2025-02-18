@@ -1,17 +1,18 @@
 import { createTheme } from '@mui/material/styles';
+import { TagColor } from './types/TagColor';
 
 // Augment the palette to include a salmon color
 declare module '@mui/material/styles' {
   interface Palette {
-    tool: Palette['primary'];
-    technology: Palette['primary'];
-    topic: Palette['primary'];
+    [TagColor.Tool]: Palette['primary'];
+    [TagColor.Technology]: Palette['primary'];
+    [TagColor.Topic]: Palette['primary'];
   }
 
   interface PaletteOptions {
-    tool?: PaletteOptions['primary'];
-    technology?: PaletteOptions['primary'];
-    topic?: PaletteOptions['primary'];
+    [TagColor.Tool]?: PaletteOptions['primary'];
+    [TagColor.Technology]?: PaletteOptions['primary'];
+    [TagColor.Topic]?: PaletteOptions['primary'];
   }
 }
 
@@ -33,23 +34,23 @@ let theme = createTheme({
 theme = createTheme(theme, {
   // Custom colors created with augmentColor go here
   palette: {
-    tool: theme.palette.augmentColor({
+    [TagColor.Tool]: theme.palette.augmentColor({
       color: {
         main: '#dc143c',
       },
-      name: 'tool',
+      name: TagColor.Tool,
     }),
-    technology: theme.palette.augmentColor({
+    [TagColor.Technology]: theme.palette.augmentColor({
       color: {
         main: '#6495ED',
       },
-      name: 'technology',
+      name: TagColor.Technology,
     }),
-    topic: theme.palette.augmentColor({
+    [TagColor.Topic]: theme.palette.augmentColor({
       color: {
         main: '#32CD32',
       }, 
-      name: 'topic',
+      name: TagColor.Topic,
     }),
   },
 });
