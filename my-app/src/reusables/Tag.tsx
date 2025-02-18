@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Chip from '@mui/material/Chip';
-import { TagColor } from '../types/TagColor';
+import { TagColor } from '../enums/TagColor';
 
 // Update the Chip's color options to include custom colors
 declare module '@mui/material/Chip' {

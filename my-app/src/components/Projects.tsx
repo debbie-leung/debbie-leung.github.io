@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Container } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import ImageCard from '../reusables/ImageCard';
-import { TagColor } from '../types/TagColor';
-import { MediaType } from '../types/MediaType';
+import { TagColor } from '../enums/TagColor';
+import { MediaType } from '../enums/MediaType';
 import { TagProps } from '../reusables/Tag';
 
 export interface Project {
@@ -25,7 +25,7 @@ const Projects = ({ projects, selectedFilters }: ProjectProps) => {
 
   useEffect(() => {
     setSelectedProjects(projects.filter(project => selectedFilters.every(filter => project.tags.some(tag => tag.name === filter.name))));
-  }, [selectedFilters]);
+  }, [projects,selectedFilters]);
 
   return (
     <Container maxWidth={false}>

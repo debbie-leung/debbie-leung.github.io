@@ -1,6 +1,6 @@
 import { Project } from "../components/Projects";
-import { MediaType } from "../types/MediaType";
-import { TagColor } from "../types/TagColor";
+import { MediaType } from "../enums/MediaType";
+import { TagColor } from "../enums/TagColor";
 import climatePaper from '../media/climate.png';
 import entoproctaWebsite from '../media/entoprocta.png';
 import scmpPost from '../media/scmp.png';

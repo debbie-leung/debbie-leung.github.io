@@ -1,6 +1,6 @@
 import { Project } from "../components/Projects";
-import { TagColor } from "../types/TagColor";
-import { MediaType } from "../types/MediaType";
+import { TagColor } from "../enums/TagColor";
+import { MediaType } from "../enums/MediaType";
 import belizePowerpoint from '../media/belize.png';
 import thesisPoster from '../media/thesis.png';
 import finalThesisPDF from '../media/final_thesis.pdf';

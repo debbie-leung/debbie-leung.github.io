@@ -17,7 +17,7 @@ const TabContent = () => {
     const [tabValue, setTabValue] = useState('1');
     const [filterOptions, setFilterOptions] = useState<TagProps[]>([]);
     const [selectedFilters, setSelectedFilters] = useState<TagProps[]>([]); 
-    const [data, setData] = useState<Project[][]>([ technicalProjects, biologyProjects, publications ]);
+    const [data] = useState<Project[][]>([ technicalProjects, biologyProjects, publications ]);
 
     const handleChange = (newValue: string) => {
         setTabValue(newValue); 

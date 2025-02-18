@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles';
-import { TagColor } from './types/TagColor';
+import { TagColor } from './enums/TagColor';
 
 // Augment the palette to include a salmon color
 declare module '@mui/material/styles' {

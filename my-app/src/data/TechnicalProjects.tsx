@@ -1,6 +1,6 @@
-import { TagColor } from "../types/TagColor";
+import { TagColor } from "../enums/TagColor";
 import { Project } from "../components/Projects";
-import { MediaType } from "../types/MediaType";
+import { MediaType } from "../enums/MediaType";
 import dumboOctopus from '../media/dumbo_robot.mp4';
 import wallE from '../media/wall-e.gif';
 import rrt from '../media/rrt.gif';
