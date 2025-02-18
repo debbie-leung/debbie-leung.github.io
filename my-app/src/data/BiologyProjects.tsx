@@ -50,7 +50,7 @@ export const biologyProjects: Project[] = [
         media: [belizePowerpoint],
         mediaType: MediaType.Image,
         tags: [
-            { name: "Underwater visual census", color: TagColor.Tool },
+            { name: "Underwater Visual Census", color: TagColor.Tool },
             { name: "MeshLab", color: TagColor.Technology },
             { name: "Behavioral Ecology", color: TagColor.Topic },
         ],

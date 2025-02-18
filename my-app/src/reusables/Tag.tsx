@@ -11,7 +11,7 @@ declare module '@mui/material/Chip' {
     }
 }
 
-interface TagProps {
+export interface TagProps {
     name: string;
     color: TagColor;
 }
