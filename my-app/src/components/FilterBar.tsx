@@ -1,14 +1,21 @@
 import React from 'react';
 import { Autocomplete, Chip, TextField } from '@mui/material';
 import { tagCategoryColors, TagProps } from '../reusables/Tag';
+import { TagCategory } from '../enums/TagCategory';
+import { TravelType } from '../enums/TravelType';
 
-interface FilterBarProps {
-  options: TagProps[];
-  value: TagProps[];
-  onChange: (newValue: TagProps[]) => void;
+export interface FilterBarOption extends TagProps {
+  category: TagCategory | TravelType;
 }
 
-const FilterBar = ({ options, value, onChange }: FilterBarProps) => {
+interface FilterBarProps {
+  tabValue: string;
+  options: FilterBarOption[];
+  value: FilterBarOption[];
+  onChange: (newValue: FilterBarOption[]) => void;
+}
+
+const FilterBar = ({ tabValue, options, value, onChange }: FilterBarProps) => {
   return (
     <Autocomplete
       multiple
@@ -16,8 +23,8 @@ const FilterBar = ({ options, value, onChange }: FilterBarProps) => {
       options={options}
       getOptionLabel={(option) => option?.name}
       value={value}
-      onChange={(event, newValue) => onChange(newValue)}
-      groupBy={(option) => option.category}
+      onChange={(event, newValue) => onChange(newValue as FilterBarOption[])}
+      groupBy={parseInt(tabValue) > 1 ? (option) => option.category : undefined}
       renderTags={(tagValue, getTagProps) =>
         tagValue.map((option, index) => {
           const tagProps = getTagProps({ index });
@@ -25,7 +32,7 @@ const FilterBar = ({ options, value, onChange }: FilterBarProps) => {
             <Chip
               key={tagProps.key}
               label={option.name}
-              color={tagCategoryColors[option.category]}
+              color={option.color}
               {...tagProps}
             />
           );
@@ -35,7 +42,7 @@ const FilterBar = ({ options, value, onChange }: FilterBarProps) => {
         const { key, ...restProps } = props; 
         return (
           <li key={key} {...restProps}>
-            <Chip label={option.name} color={tagCategoryColors[option.category]} /> 
+            <Chip label={option.name} color={option.color} /> 
           </li>
         );
       }}

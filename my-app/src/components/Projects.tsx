@@ -2,17 +2,21 @@ import React, { useEffect, useState } from 'react';
 import { Container } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import ImageCard from '../reusables/ImageCard';
-import { Color } from '../enums/Color';
 import { MediaType } from '../enums/MediaType';
 import { TagProps } from '../reusables/Tag';
 import { TagCategory } from '../enums/TagCategory';
+
+interface ProjectTag {
+  name: string;
+  category: TagCategory;
+}
 
 export interface Project {
   title: string;
   media: string[];
   mediaType: MediaType;
   mediaLink?: string;
-  tags: { name: string; category: TagCategory }[];
+  tags: ProjectTag[];
   description: string;
 }
 

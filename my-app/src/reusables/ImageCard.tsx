@@ -5,7 +5,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Tag from './Tag';
+import Tag, { tagCategoryColors } from './Tag';
 import { CardHeader } from '@mui/material';
 import { Project } from '../components/Projects';
 import { useState } from 'react';
@@ -30,7 +30,7 @@ export default function ImageCard({ media, mediaType, mediaLink, title, tags, de
                 title={title}
                 subheader={<>
                     {tags.map((tag, index) => (
-                        <Tag key={index} name={tag.name} category={tag.category} />
+                        <Tag key={index} name={tag.name} color={tagCategoryColors[tag.category]} />
                     ))}
                 </>}
             />

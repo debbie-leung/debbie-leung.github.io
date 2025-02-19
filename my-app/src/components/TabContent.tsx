@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
@@ -10,13 +10,14 @@ import { technicalProjects } from '../data/TechnicalProjects';
 import { biologyProjects } from '../data/BiologyProjects';
 import { publications } from '../data/Publications';
 import travelSpots from '../data/TravelSpots';
-import FilterBar from './FilterBar';
-import { TagProps } from '../reusables/Tag';
+import FilterBar, { FilterBarOption } from './FilterBar';
+import { tagCategoryColors } from '../reusables/Tag';
+import { TravelType } from '../enums/TravelType';
 
 const TabContent = () => {
     const [tabValue, setTabValue] = useState('1');
-    const [filterOptions, setFilterOptions] = useState<TagProps[]>([]);
-    const [selectedFilters, setSelectedFilters] = useState<TagProps[]>([]); 
+    const [filterOptions, setFilterOptions] = useState<FilterBarOption[]>([]);
+    const [selectedFilters, setSelectedFilters] = useState<FilterBarOption[]>([]); 
     const [data] = useState<Project[][]>([ technicalProjects, biologyProjects, publications ]);
 
     const handleChange = (newValue: string) => {
@@ -24,23 +25,37 @@ const TabContent = () => {
         // Clear selected filters when tab changes
         setSelectedFilters([]); 
         // Update the filter bar options based on the new tab value
-        const index = parseInt(newValue) - 2;
-        if (index >= 0) {
+        if (newValue > '1') {
+            const index = parseInt(newValue) - 2;
             // Get all tags from projects and flatten into a single array
             const allTags = data[index].map((project) => project.tags).flat();
             // Extract unique tag names
             const uniqueTagNames = Array.from(new Set(allTags.map(tag => tag.name)));
-            // Map tag names back to their full tag objects
+            // Map tag names to TagProps objects with name and color from tagCategoryColors
             const newFilterOptions = uniqueTagNames.map(name => {
-                return allTags.find(tag => tag.name === name)!;
+                const tag = allTags.find(tag => tag.name === name)!;
+                return {
+                    name: tag.name,
+                    category: tag.category,
+                    color: tagCategoryColors[tag.category]
+                };
             });
-            // Sort tags by category to group them together
+            // Sort tags by color to group them together
             newFilterOptions.sort((a, b) => {
-                if (a.category < b.category) return -1;
-                if (a.category > b.category) return 1;
+                if (a.color < b.color) return -1;
+                if (a.color > b.color) return 1;
                 return 0;
             });
             setFilterOptions(newFilterOptions);
+        } else if (newValue === '1') {
+            const mapOptions = [
+                { name: "Study", category: TravelType.Study, color: tagCategoryColors[TravelType.Study] },
+                { name: "Extracurricular", category: TravelType.Extracurricular, color: tagCategoryColors[TravelType.Extracurricular] },
+                { name: "Work", category: TravelType.Work, color: tagCategoryColors[TravelType.Work] },
+                { name: "Fun", category: TravelType.FunTrip, color: tagCategoryColors[TravelType.FunTrip] },
+                { name: "Diving", category: TravelType.Diving, color: tagCategoryColors[TravelType.Diving] },
+            ];
+            setFilterOptions(mapOptions);
         } else {
             setFilterOptions([]); // Reset filters for travel tab
         }
@@ -68,11 +83,11 @@ const TabContent = () => {
                         </TabList>
                     </Box>
                     <Box sx={{ width: '25%' }}>
-                        <FilterBar options={filterOptions} value={selectedFilters} onChange={setSelectedFilters} />
+                        <FilterBar tabValue={tabValue} options={filterOptions} value={selectedFilters} onChange={setSelectedFilters} />
                     </Box>
                 </Box>
                 <TabPanel value="1">
-                    <InteractiveMap hotspots={travelSpots} />
+                    <InteractiveMap hotspots={travelSpots} selectedFilters={selectedFilters} />
                 </TabPanel>
                 <TabPanel value="2">
                     <Projects projects={data[0]} selectedFilters={selectedFilters} />
