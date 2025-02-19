@@ -40,7 +40,7 @@ theme = createTheme(theme, {
   palette: {
     [Color.Red]: theme.palette.augmentColor({
       color: {
-        main: '#dc143c',
+        main: '#DC143C',
       },
       name: Color.Red,
     }),
@@ -58,13 +58,13 @@ theme = createTheme(theme, {
     }),
     [Color.Yellow]: theme.palette.augmentColor({
       color: {
-        main: '#FFC107',
+        main: '#FFE11C',
       },
       name: Color.Yellow,
     }),
     [Color.Purple]: theme.palette.augmentColor({
       color: {
-        main: '#C107FF',
+        main: '#7A3DE3',
       },
       name: Color.Purple,
     }),

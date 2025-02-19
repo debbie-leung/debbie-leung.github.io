@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Chip, { ChipProps } from '@mui/material/Chip';
-import { Color } from '../enums/Color';
+import { Color, ColorWithOpacity } from '../enums/Color';
 import { TagCategory } from '../enums/TagCategory';
 import { TravelType } from '../enums/TravelType';
 
@@ -15,15 +15,15 @@ declare module '@mui/material/Chip' {
     }
 }
 
-export const tagCategoryColors: Record<TagCategory | TravelType, ChipProps['color']> = {
-    [TagCategory.Tool]: Color.Red, 
-    [TagCategory.Technology]: Color.Blue, 
-    [TagCategory.Topic]: Color.Green,
-    [TravelType.Study]: Color.Purple,
-    [TravelType.Extracurricular]: Color.Green,
-    [TravelType.Work]: Color.Red,
-    [TravelType.FunTrip]: Color.Yellow,
-    [TravelType.Diving]: Color.Blue,
+export const tagCategoryColors: Record<TagCategory | TravelType, { chipColor: ChipProps['color'], bgColor: string }> = {
+    [TagCategory.Tool]: { chipColor: Color.Red, bgColor: ColorWithOpacity.Red },
+    [TagCategory.Technology]: { chipColor: Color.Blue, bgColor: ColorWithOpacity.Blue },
+    [TagCategory.Topic]: { chipColor: Color.Green, bgColor: ColorWithOpacity.Green },
+    [TravelType.Study]: { chipColor: Color.Purple, bgColor: ColorWithOpacity.Purple },
+    [TravelType.Extracurricular]: { chipColor: Color.Green, bgColor: ColorWithOpacity.Green },
+    [TravelType.Work]: { chipColor: Color.Red, bgColor: ColorWithOpacity.Red },
+    [TravelType.FunTrip]: { chipColor: Color.Yellow, bgColor: ColorWithOpacity.Yellow },
+    [TravelType.Diving]: { chipColor: Color.Blue, bgColor: ColorWithOpacity.Blue },
 };
 
 export interface TagProps {
@@ -35,7 +35,7 @@ export default function Tag({ name, category }: TagProps) {
     return (
         <Chip 
             label={name}
-            color={tagCategoryColors[category]}
+            color={tagCategoryColors[category].chipColor}
         />
     );
 }

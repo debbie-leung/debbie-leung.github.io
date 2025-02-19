@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Tooltip, Box } from '@mui/material';
 import mapImage from '../media/world_map.png';
 import { TravelType } from '../enums/TravelType';
-import { TagProps } from '../reusables/Tag';
+import { tagCategoryColors, TagProps } from '../reusables/Tag';
 
 export interface Hotspot {
   country: string;
@@ -12,14 +12,6 @@ export interface Hotspot {
   description: string;
   category: TravelType;
 }
-
-const travelTypeColors: Record<TravelType, string> = {
-  [TravelType.Study]: 'rgba(193, 7, 255, 0.5)', // Purple
-  [TravelType.Extracurricular]: 'rgba(50, 205, 50, 0.5)', // Green
-  [TravelType.Work]: 'rgba(220, 20, 60, 0.5)', // Red
-  [TravelType.FunTrip]: 'rgba(255, 193, 7, 0.5)', // Amber
-  [TravelType.Diving]: 'rgba(100, 149, 237, 0.5)', // Blue
-};
 
 const LATITUDE_OFFSET = 11;
 const LONGITUDE_OFFSET = -4;
@@ -83,11 +75,11 @@ const InteractiveMap = ({ hotspots, selectedFilters }: InteractiveMapProps) => {
               left: `${convertToPercentage(hotspot.longitude, false)}%`,
               width: '1vw',
               height: '1vw',
-              backgroundColor: travelTypeColors[hotspot.category],
+              backgroundColor: tagCategoryColors[hotspot.category].bgColor,
               borderRadius: '50%',
               cursor: 'pointer',
               '&:hover': {
-                backgroundColor: travelTypeColors[hotspot.category].replace(/0.5\)$/, '0.8)'),
+                backgroundColor: tagCategoryColors[hotspot.category].bgColor.replace(/0.5\)$/, '0.8)'),
               },
             }}
           />
