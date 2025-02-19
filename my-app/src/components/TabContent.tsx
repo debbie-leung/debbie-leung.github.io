@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
@@ -10,14 +10,14 @@ import { technicalProjects } from '../data/TechnicalProjects';
 import { biologyProjects } from '../data/BiologyProjects';
 import { publications } from '../data/Publications';
 import travelSpots from '../data/TravelSpots';
-import FilterBar, { FilterBarOption } from './FilterBar';
-import { tagCategoryColors } from '../reusables/Tag';
-import { TravelType } from '../enums/TravelType';
+import FilterBar from './FilterBar';
+import { TagProps } from '../reusables/Tag';
+import { travelCategories } from '../data/TravelCategories';
 
 const TabContent = () => {
     const [tabValue, setTabValue] = useState('1');
-    const [filterOptions, setFilterOptions] = useState<FilterBarOption[]>([]);
-    const [selectedFilters, setSelectedFilters] = useState<FilterBarOption[]>([]); 
+    const [filterOptions, setFilterOptions] = useState<TagProps[]>(travelCategories);
+    const [selectedFilters, setSelectedFilters] = useState<TagProps[]>([]); 
     const [data] = useState<Project[][]>([ technicalProjects, biologyProjects, publications ]);
 
     const handleChange = (newValue: string) => {
@@ -37,25 +37,17 @@ const TabContent = () => {
                 return {
                     name: tag.name,
                     category: tag.category,
-                    color: tagCategoryColors[tag.category]
                 };
             });
-            // Sort tags by color to group them together
+            // Sort tags by category to group them together
             newFilterOptions.sort((a, b) => {
-                if (a.color < b.color) return -1;
-                if (a.color > b.color) return 1;
+                if (a.category < b.category) return -1;
+                if (a.category > b.category) return 1;
                 return 0;
             });
             setFilterOptions(newFilterOptions);
         } else if (newValue === '1') {
-            const mapOptions = [
-                { name: "Study", category: TravelType.Study, color: tagCategoryColors[TravelType.Study] },
-                { name: "Extracurricular", category: TravelType.Extracurricular, color: tagCategoryColors[TravelType.Extracurricular] },
-                { name: "Work", category: TravelType.Work, color: tagCategoryColors[TravelType.Work] },
-                { name: "Fun", category: TravelType.FunTrip, color: tagCategoryColors[TravelType.FunTrip] },
-                { name: "Diving", category: TravelType.Diving, color: tagCategoryColors[TravelType.Diving] },
-            ];
-            setFilterOptions(mapOptions);
+            setFilterOptions(travelCategories);
         } else {
             setFilterOptions([]); // Reset filters for travel tab
         }

@@ -16,7 +16,7 @@ export interface Hotspot {
 const travelTypeColors: Record<TravelType, string> = {
   [TravelType.Study]: 'rgba(193, 7, 255, 0.5)', // Purple
   [TravelType.Extracurricular]: 'rgba(50, 205, 50, 0.5)', // Green
-  [TravelType.Work]: 'rgba(255, 0, 0, 0.5)', // Red
+  [TravelType.Work]: 'rgba(220, 20, 60, 0.5)', // Red
   [TravelType.FunTrip]: 'rgba(255, 193, 7, 0.5)', // Amber
   [TravelType.Diving]: 'rgba(100, 149, 237, 0.5)', // Blue
 };

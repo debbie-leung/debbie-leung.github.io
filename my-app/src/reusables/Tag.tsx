@@ -28,14 +28,14 @@ export const tagCategoryColors: Record<TagCategory | TravelType, ChipProps['colo
 
 export interface TagProps {
     name: string;
-    color: ChipProps['color'];
+    category: TagCategory | TravelType;
 }
 
-export default function Tag({ name, color }: TagProps) {
+export default function Tag({ name, category }: TagProps) {
     return (
         <Chip 
             label={name}
-            color={color}
+            color={tagCategoryColors[category]}
         />
     );
 }
