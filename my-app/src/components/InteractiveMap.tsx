@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Tooltip, Box } from '@mui/material';
+import { Box } from '@mui/material';
 import mapImage from '../media/world_map.png';
 import { TravelType } from '../enums/TravelType';
 import { tagCategoryColors, TagProps } from '../reusables/Tag';
+import MouseHoverPopover from '../reusables/MouseHoverPopover';
 
 export interface Hotspot {
   country: string;
@@ -67,7 +68,7 @@ const InteractiveMap = ({ hotspots, selectedFilters }: InteractiveMapProps) => {
         }} 
       />
       {selectedHotspots.map((hotspot, index) => (
-        <Tooltip key={index} title={hotspot.description} arrow>
+        <MouseHoverPopover key={index} content={hotspot.description}>
           <Box
             sx={{
               position: 'absolute',
@@ -83,7 +84,7 @@ const InteractiveMap = ({ hotspots, selectedFilters }: InteractiveMapProps) => {
               },
             }}
           />
-        </Tooltip>
+        </MouseHoverPopover>
       ))}
     </Box>
   );

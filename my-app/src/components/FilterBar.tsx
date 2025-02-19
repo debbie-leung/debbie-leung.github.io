@@ -1,6 +1,7 @@
 import React from 'react';
 import { Autocomplete, Chip, TextField } from '@mui/material';
 import { tagCategoryColors, TagProps } from '../reusables/Tag';
+import { FilterList } from '@mui/icons-material';
 
 interface FilterBarProps {
   tabValue: string;
@@ -19,6 +20,7 @@ const FilterBar = ({ tabValue, options, value, onChange }: FilterBarProps) => {
       value={value}
       onChange={(event, newValue) => onChange(newValue as TagProps[])}
       groupBy={parseInt(tabValue) > 1 ? (option) => option.category : undefined}
+      popupIcon={<FilterList />}
       renderTags={(tagValue, getTagProps) =>
         tagValue.map((option, index) => {
           const tagProps = getTagProps({ index });
