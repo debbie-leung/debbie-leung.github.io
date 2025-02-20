@@ -66,7 +66,7 @@ const TabContent = () => {
                     display: 'flex',
                     alignItems: 'center'
                 }}>
-                    <Box sx={{ width: '75%' }}>
+                    <Box sx={{ width: '70%' }}>
                         <TabList onChange={(event, newValue) => handleChange(newValue)} sx={{ width: '100%' }}>
                             <Tab label="Travel" value="1" />
                             <Tab label="Technical Projects" value="2" />
@@ -74,7 +74,7 @@ const TabContent = () => {
                             <Tab label="Publications" value="4" />
                         </TabList>
                     </Box>
-                    <Box sx={{ width: '25%' }}>
+                    <Box sx={{ width: '30%' }}>
                         <FilterBar tabValue={tabValue} options={filterOptions} value={selectedFilters} onChange={setSelectedFilters} />
                     </Box>
                 </Box>

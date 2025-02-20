@@ -38,7 +38,11 @@ const FilterBar = ({ tabValue, options, value, onChange }: FilterBarProps) => {
         const { key, ...restProps } = props; 
         return (
           <li key={key} {...restProps}>
-            <Chip label={option.name} color={tagCategoryColors[option.category].chipColor} /> 
+            <Chip 
+              label={option.name} 
+              color={tagCategoryColors[option.category].chipColor} 
+              size="small" 
+            /> 
           </li>
         );
       }}

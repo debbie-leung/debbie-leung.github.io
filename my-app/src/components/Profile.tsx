@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Avatar, IconButton } from '@mui/material';
+import { Typography, Avatar } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import profilePicture from '../media/Debbie.png';
 import PhoneIcon from '@mui/icons-material/Phone';

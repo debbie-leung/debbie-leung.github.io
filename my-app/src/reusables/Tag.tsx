@@ -36,6 +36,7 @@ export default function Tag({ name, category }: TagProps) {
         <Chip 
             label={name}
             color={tagCategoryColors[category].chipColor}
+            size="small"
         />
     );
 }
