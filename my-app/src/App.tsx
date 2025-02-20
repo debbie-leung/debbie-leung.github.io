@@ -10,7 +10,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Box sx={{ flexGrow: 1 }}>
-        <Grid container spacing={1}>
+        <Grid container>
           <Grid size={3} sx={{ position: 'sticky', top: 0, height: '100vh' }}>
             <Profile />
           </Grid>

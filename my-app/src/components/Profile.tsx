@@ -9,7 +9,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 const Profile = () => {
     return (
-        <Grid container spacing={4} alignItems="center" direction="column">
+        <Grid container spacing={4} direction="column" sx={{ padding: 3 }}>
             <Grid display="flex" justifyContent="center">
                 <Avatar alt="Debbie Leung" src={profilePicture} sx={{ width: 120, height: 120 }} />
             </Grid>
@@ -36,18 +36,22 @@ const Profile = () => {
             </Grid>
             <Grid>
                 <Typography variant="h6">SOCIAL</Typography>
-                <Grid container spacing={2}>
-                    <Grid>
-                        <LinkedInIcon />
+                <Grid container direction="row" spacing={4}>
+                    <Grid container spacing={2} component="a" href="https://www.linkedin.com/in/debbie-sinki-leung/" target="_blank" rel="noopener noreferrer" sx={{ textDecoration: 'none', color: 'inherit' }}>
+                        <Grid>
+                            <LinkedInIcon />
+                        </Grid>
+                        <Grid>
+                            <Typography>LinkedIn</Typography>
+                        </Grid>
                     </Grid>
-                    <Grid>
-                        <Typography>LinkedIn</Typography>
-                    </Grid>
-                    <Grid>
-                        <GitHubIcon />
-                    </Grid>
-                    <Grid>
-                        <Typography>GitHub</Typography>
+                    <Grid container spacing={2} component="a" href="https://github.com/debbie-leung" target="_blank" rel="noopener noreferrer" sx={{ textDecoration: 'none', color: 'inherit' }}>
+                        <Grid>
+                            <GitHubIcon />
+                        </Grid>
+                        <Grid>
+                            <Typography>GitHub</Typography>
+                        </Grid>
                     </Grid>
                 </Grid>
             </Grid>
