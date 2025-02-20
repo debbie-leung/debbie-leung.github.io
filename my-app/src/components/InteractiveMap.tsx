@@ -8,14 +8,15 @@ import MouseHoverPopover from '../reusables/MouseHoverPopover';
 export interface Hotspot {
   country: string;
   city: string;
+  date: string;
   latitude: number;
   longitude: number;
-  description: string;
+  description: string[];
   category: TravelType;
 }
 
 const LATITUDE_OFFSET = 11;
-const LONGITUDE_OFFSET = -4;
+const LONGITUDE_OFFSET = -3.5;
 
 // Function to convert latitude and longitude to top and left percentages using Mercator projection
 const convertToPercentage = (value: number, isLatitude: boolean) => {
@@ -68,7 +69,7 @@ const InteractiveMap = ({ hotspots, selectedFilters }: InteractiveMapProps) => {
         }} 
       />
       {selectedHotspots.map((hotspot, index) => (
-        <MouseHoverPopover key={index} content={hotspot.description}>
+        <MouseHoverPopover key={index} data={hotspot}>
           <Box
             sx={{
               position: 'absolute',

@@ -1,12 +1,14 @@
 import React from 'react';
-import { Card, CardContent, Popover, Typography } from '@mui/material';
+import { Card, CardContent, CardMedia, Popover, Typography } from '@mui/material';
+import { Hotspot } from '../components/InteractiveMap';
+import wallE from '../media/wall-e.gif';
 
 interface MouseHoverPopoverProps {
-  content: string;
+  data: Hotspot;
   children: React.ReactElement<React.HTMLAttributes<HTMLElement>>;
 }
 
-const MouseHoverPopover = ({ content, children }: MouseHoverPopoverProps) => {
+const MouseHoverPopover = ({ data, children }: MouseHoverPopoverProps) => {
   const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
 
   const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>) => {
@@ -34,19 +36,30 @@ const MouseHoverPopover = ({ content, children }: MouseHoverPopoverProps) => {
         onClose={handlePopoverClose}
         disableRestoreFocus
       >
-        <Card sx={{ width: 300 }} elevation={0}>
+        <Card sx={{ width: 300 }}>
           <CardContent>
             <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}>
-              Word of the Day
+              {data.country}
             </Typography>
+          </CardContent>
+          <CardMedia
+            sx={{ height: 140 }}
+            image={wallE}
+            title="green iguana"
+          />
+          <CardContent>
             <Typography variant="h5" component="div">
-              {content}
+              {data.city}
             </Typography>
-            <Typography sx={{ color: 'text.secondary', mb: 1.5 }}>adjective</Typography>
-            <Typography variant="body2">
-              well meaning and kindly.
-              <br />
-              {'"a benevolent smile"'}
+            <Typography sx={{ color: 'text.secondary', mb: 1.5 }}>
+              {data.date}
+            </Typography>
+            <Typography variant="body2" component="div">
+              <ul style={{ margin: 0, paddingLeft: 20 }}>
+                {data.description.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
             </Typography>
           </CardContent>
         </Card>

@@ -21,6 +21,7 @@ const FilterBar = ({ tabValue, options, value, onChange }: FilterBarProps) => {
       onChange={(event, newValue) => onChange(newValue as TagProps[])}
       groupBy={parseInt(tabValue) > 1 ? (option) => option.category : undefined}
       popupIcon={<FilterList />}
+      // style={{ maxHeight: '40px', overflowX: 'auto' }}
       renderTags={(tagValue, getTagProps) =>
         tagValue.map((option, index) => {
           const tagProps = getTagProps({ index });
@@ -30,6 +31,7 @@ const FilterBar = ({ tabValue, options, value, onChange }: FilterBarProps) => {
               label={option.name}
               color={tagCategoryColors[option.category].chipColor}
               {...tagProps}
+              size="small"
             />
           );
         })
