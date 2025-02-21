@@ -61,7 +61,6 @@ const TabContent = () => {
                     borderColor: 'divider', 
                     position: 'sticky', 
                     top: 0, 
-                    backgroundColor: 'white', 
                     zIndex: 1,
                     display: 'flex',
                     alignItems: 'center'

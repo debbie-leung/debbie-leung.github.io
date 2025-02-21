@@ -33,6 +33,10 @@ let theme = createTheme({
   //     main: '#6495ED', // Your secondary color
   //   },
   // },
+  colorSchemes: {
+    light: true,
+    dark: true,
+  },
 });
 
 theme = createTheme(theme, {

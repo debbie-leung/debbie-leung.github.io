@@ -1,18 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Grid from '@mui/material/Grid2';
 import Profile from './components/Profile';
 import Box from '@mui/material/Box';
 import TabContent from './components/TabContent';
-import { ThemeProvider, Typography } from '@mui/material';
+import { CssBaseline, ThemeProvider, Typography, useColorScheme } from '@mui/material';
 import theme from './theme';
+import { Mode } from './enums/Mode';
 
 const App = () => {
+  const { mode, systemMode, setMode } = useColorScheme();
+  
+  // Set a default mode if mode is undefined
+  useEffect(() => {
+    if (mode === Mode.System) {
+      setMode(systemMode);
+    }
+  }, [mode, systemMode]);
+
   return (
-    <ThemeProvider theme={theme}>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container>
           <Grid size={3} sx={{ position: 'sticky', top: 0, height: '100vh' }}>
-            <Profile />
+            <Profile colorMode={mode as Mode} handleModeChange={setMode} />
           </Grid>
           <Grid size={9}>
             <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
@@ -24,8 +33,14 @@ const App = () => {
           </Grid>
         </Grid>
       </Box>
-    </ThemeProvider>
   );
 };
 
-export default App;
+export default function ToggleColorMode() {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <App />
+    </ThemeProvider>
+  );
+}
