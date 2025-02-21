@@ -19,7 +19,7 @@ const Profile = ({ colorMode, handleModeChange }: ProfileProps) => {
 
     return (
         <Grid container spacing={4} direction="column" sx={{ padding: 3, position: 'relative' }}>
-            <Grid sx={{ position: 'absolute', top: 0, right: 0, paddingTop: 2, paddingRight: 5 }}>
+            <Grid sx={{ position: 'absolute', top: 0, right: 0, paddingTop: 1, paddingRight: 5 }}>
                 <IconButton onClick={() => { handleModeChange(colorMode === Mode.Light ? Mode.Dark : Mode.Light) }}>
                 { colorMode === Mode.Light ? <LightModeIcon /> : <DarkModeIcon /> }
                 </IconButton>

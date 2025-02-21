@@ -27,15 +27,13 @@ const Projects = ({ projects, selectedFilters }: ProjectProps) => {
   }, [projects,selectedFilters]);
 
   return (
-    <Container maxWidth={false}>
-      <Grid container spacing={0}>
-        {selectedProjects.map((project, index) => (
-          <Grid key={index} size={4}>
-            <ImageCard {...project} />
-          </Grid>
-        ))}
-      </Grid>
-    </Container>
+    <Grid container spacing={2}>
+      {selectedProjects.map((project, index) => (
+        <Grid key={index} size={4}>
+          <ImageCard {...project} />
+        </Grid>
+      ))}
+    </Grid>
   );
 };
 
