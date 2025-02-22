@@ -1,8 +1,10 @@
 import { Hotspot } from "../components/InteractiveMap";
 import { TravelType } from "../enums/TravelType";
+
 const travelSpots: Hotspot[] = [
     { 
         country: "Argentina", 
+        countryCode: "AR",
         city: "Buenos Aires",
         date: "December 2017",
         category: TravelType.FunTrip,
@@ -12,6 +14,7 @@ const travelSpots: Hotspot[] = [
     },
     { 
         country: "Australia", 
+        countryCode: "AU",
         city: "Brisbane",
         date: "February - March 2020",
         category: TravelType.Study,
@@ -21,6 +24,7 @@ const travelSpots: Hotspot[] = [
     },
     {
         country: "Belize",
+        countryCode: "BZ",
         city: "Glover's Reef",
         date: "June 2021",
         category: TravelType.Diving,
@@ -30,6 +34,7 @@ const travelSpots: Hotspot[] = [
     },
     {
         country: "Panama",
+        countryCode: "PA",
         city: "Panama City",
         date: "January 2020",
         category: TravelType.Extracurricular,
@@ -39,8 +44,9 @@ const travelSpots: Hotspot[] = [
     },
     {
         country: "Ghana",
+        countryCode: "GH",
         city: "Accra",
-        date: "December - January 2018",
+        date: "January 2018",
         category: TravelType.Extracurricular,
         latitude: 5.6054,
         longitude: -0.1966,
@@ -48,6 +54,7 @@ const travelSpots: Hotspot[] = [
     },
     {
         country: "Jordan",
+        countryCode: "JO",
         city: "Amman",
         date: "July 2018",
         category: TravelType.Study,
@@ -57,6 +64,7 @@ const travelSpots: Hotspot[] = [
     },
     {
         country: "Israel",
+        countryCode: "IL",
         city: "Haifa",
         date: "August 2018",
         category: TravelType.Work,
@@ -66,15 +74,17 @@ const travelSpots: Hotspot[] = [
     },
     {
         country: "Switzerland",
-        city: "Zurich",
+        countryCode: "CH",
+        city: "St. Gallen",
         date: "March 2019",
         category: TravelType.Extracurricular,
-        latitude: 46.8182,
-        longitude: 8.2275,
+        latitude: 47.4212,
+        longitude: 9.3762,
         description: ["Attended the START Summit at the University of St. Gallen as part of CORE Tech Trek"]
     },
     {
         country: "Germany",
+        countryCode: "DE",
         city: "Berlin",
         date: "July 2019",
         category: TravelType.Study,
@@ -84,6 +94,7 @@ const travelSpots: Hotspot[] = [
     },
     {
         country: "Hong Kong",
+        countryCode: "HK",
         city: "Hong Kong",
         date: "October 1998 - August 2017",
         category: TravelType.Study,
@@ -93,6 +104,7 @@ const travelSpots: Hotspot[] = [
     },
     {
         country: "United States",
+        countryCode: "US",
         city: "New York City",
         date: "September 2017 - September 2023",
         category: TravelType.Study,
@@ -102,6 +114,7 @@ const travelSpots: Hotspot[] = [
     },
     {
         country: "United States",
+        countryCode: "US",
         city: "Boston",
         date: "October 2023 - February 2025",
         category: TravelType.Work,
@@ -111,6 +124,7 @@ const travelSpots: Hotspot[] = [
     },
     {
         country: "Mexico",
+        countryCode: "MX",
         city: "Tulum",
         date: "March 2024",
         category: TravelType.FunTrip,
@@ -120,6 +134,7 @@ const travelSpots: Hotspot[] = [
     },
     {
         country: "United States",
+        countryCode: "US",
         city: "Monterey",
         date: "August 2019",
         category: TravelType.Diving,
@@ -129,6 +144,7 @@ const travelSpots: Hotspot[] = [
     },
     {
         country: "The Philippines",
+        countryCode: "PH",
         city: "Puerto Galera",
         date: "March 2016, March 2017",
         category: TravelType.Diving,

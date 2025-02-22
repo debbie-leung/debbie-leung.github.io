@@ -1,25 +1,25 @@
 import { TagCategory } from "../enums/TagCategory";
 import { Project } from "../components/Projects";
 import { MediaType } from "../enums/MediaType";
-import dumboOctopus from '../media/dumbo_robot.mp4';
-import wallE from '../media/wall-e.gif';
-import rrt from '../media/rrt.gif';
-import objectTracking from '../media/object_tracking.gif';
-import wallEMap from '../media/walle_map.gif';
-import genbioHome from '../media/genbio_home.png';
-import genbioLogin from '../media/genbio_login.png';
-import genbioRegistration from '../media/genbio_registration.png';
-import avrHardware from '../media/avr_hardware.jpg';
-import avrPlay from '../media/avr_play.jpg';
-import avrCartoon from '../media/avr_cartoon.png';
-import rgb from '../media/4_rgb.png';
-import predMask from '../media/4_pred_mask.png';
-import mesh from '../media/4_mesh01.png';
-import booleanArray from '../media/boolean_array.png';
-import orientation from '../media/orientation.png';
-import voxels from '../media/voxels.png';
-import perspective from '../media/perspective.png';
-import houghLine from '../media/hough_line.png';
+import dumboOctopus from '../media/technical/dumbo_robot.mp4';
+import wallE from '../media/technical/wall-e.gif';
+import rrt from '../media/technical/rrt.gif';
+import objectTracking from '../media/technical/object_tracking.gif';
+import wallEMap from '../media/technical/walle_map.gif';
+import genbioHome from '../media/technical/genbio_home.png';
+import genbioLogin from '../media/technical/genbio_login.png';
+import genbioRegistration from '../media/technical/genbio_registration.png';
+import avrHardware from '../media/technical/avr_hardware.jpg';
+import avrPlay from '../media/technical/avr_play.jpg';
+import avrCartoon from '../media/technical/avr_cartoon.png';
+import rgb from '../media/technical/4_rgb.png';
+import predMask from '../media/technical/4_pred_mask.png';
+import mesh from '../media/technical/4_mesh01.png';
+import booleanArray from '../media/technical/boolean_array.png';
+import orientation from '../media/technical/orientation.png';
+import voxels from '../media/technical/voxels.png';
+import perspective from '../media/technical/perspective.png';
+import houghLine from '../media/technical/hough_line.png';
 
 export const technicalProjects: Project[] = [
     {

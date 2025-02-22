@@ -75,9 +75,6 @@ export default function ImageCard({ media, mediaType, mediaLink, title, tags, de
                     {description}
                 </Typography>
             </CardContent>
-            <CardActions>
-                <Button size="small">Share</Button>
-            </CardActions>
         </Card>
     );
 }

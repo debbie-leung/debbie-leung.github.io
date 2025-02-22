@@ -1,12 +1,12 @@
 import { Project } from "../components/Projects";
 import { TagCategory } from "../enums/TagCategory";
 import { MediaType } from "../enums/MediaType";
-import belizePowerpoint from '../media/belize.png';
-import thesisPoster from '../media/thesis.png';
-import finalThesisPDF from '../media/final_thesis.pdf';
-import hopkinsPoster from '../media/hopkins_poster.png';
-import bendeskyPowerpoint from '../media/bendesky.png';
-import bendeskyPresentation from '../media/bendesky_presentation.pdf';
+import belizePowerpoint from '../media/biology/belize.png';
+import thesisPoster from '../media/biology/thesis.png';
+import finalThesisPDF from '../media/biology/final_thesis.pdf';
+import hopkinsPoster from '../media/biology/hopkins_poster.png';
+import bendeskyPowerpoint from '../media/biology/bendesky.png';
+import bendeskyPresentation from '../media/biology/bendesky_presentation.pdf';
 
 export const biologyProjects: Project[] = [
     {

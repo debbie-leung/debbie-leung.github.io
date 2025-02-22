@@ -1,10 +1,10 @@
 import { Project } from "../components/Projects";
 import { MediaType } from "../enums/MediaType";
 import { TagCategory } from "../enums/TagCategory";
-import climatePaper from '../media/climate.png';
-import entoproctaWebsite from '../media/entoprocta.png';
-import scmpPost from '../media/scmp.png';
-import climatePaperPDF from '../media/climate_paper.pdf';
+import climatePaper from '../media/publications/climate.png';
+import entoproctaWebsite from '../media/publications/entoprocta.png';
+import scmpPost from '../media/publications/scmp.png';
+import climatePaperPDF from '../media/publications/climate_paper.pdf';
 
 export const publications: Project[] = [
     {
