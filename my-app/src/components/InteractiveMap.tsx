@@ -7,12 +7,14 @@ import MouseHoverPopover from '../reusables/MouseHoverPopover';
 
 export interface Hotspot {
   country: string;
+  countryCode: string;
   city: string;
+  category: TravelType;
   date: string;
   latitude: number;
   longitude: number;
   description: string[];
-  category: TravelType;
+  media: string[];
 }
 
 const LATITUDE_OFFSET = 11;

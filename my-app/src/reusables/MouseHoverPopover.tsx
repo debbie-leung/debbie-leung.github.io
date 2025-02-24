@@ -1,7 +1,10 @@
-import React from 'react';
-import { Card, CardContent, CardMedia, Popover, Typography } from '@mui/material';
+import React, { useState } from 'react';
+import { Card, CardContent, CardMedia, IconButton, Popover, Typography } from '@mui/material';
 import { Hotspot } from '../components/InteractiveMap';
-import wallE from '../media/wall-e.gif';
+import ReactCountryFlag from 'react-country-flag';
+import { ChevronRight } from '@mui/icons-material';
+import { ChevronLeft } from '@mui/icons-material';
+import { MediaType } from '../enums/MediaType';
 
 interface MouseHoverPopoverProps {
   data: Hotspot;
@@ -10,6 +13,7 @@ interface MouseHoverPopoverProps {
 
 const MouseHoverPopover = ({ data, children }: MouseHoverPopoverProps) => {
   const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -20,6 +24,14 @@ const MouseHoverPopover = ({ data, children }: MouseHoverPopoverProps) => {
   };
 
   const open = Boolean(anchorEl);
+
+  const handleNext = () => {
+    setCurrentImageIndex((prev) => (prev + 1) % data.media.length);
+  };
+
+  const handlePrevious = () => {
+    setCurrentImageIndex((prev) => (prev - 1 + data.media.length) % data.media.length);
+  };
 
   return (
     <div>
@@ -40,13 +52,33 @@ const MouseHoverPopover = ({ data, children }: MouseHoverPopoverProps) => {
           <CardContent>
             <Typography gutterBottom sx={{ color: 'text.secondary', fontSize: 14 }}>
               {data.country}
+              <ReactCountryFlag countryCode={data.countryCode} svg style={{ width: '1.5em', height: '1.5em', marginLeft: '0.5em' }} />
             </Typography>
           </CardContent>
+          <div style={{ position: 'relative' }}>
+
           <CardMedia
             sx={{ height: 140 }}
-            image={wallE}
-            title="green iguana"
-          />
+            component={MediaType.Image}
+            src={data.media[currentImageIndex]}
+            />
+          {data.media.length > 1 && (
+            <>
+                <IconButton 
+                  onClick={handlePrevious}
+                  style={{ position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)' }}
+                  >
+                  <ChevronLeft />
+                </IconButton>
+                <IconButton 
+                  onClick={handleNext}
+                  style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)' }}
+                  >
+                  <ChevronRight />
+                </IconButton>
+              </>
+          )}
+          </div>
           <CardContent>
             <Typography variant="h5" component="div">
               {data.city}
