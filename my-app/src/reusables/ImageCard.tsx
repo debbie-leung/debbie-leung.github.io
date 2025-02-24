@@ -27,7 +27,8 @@ export default function ImageCard({ media, mediaType, mediaLink, title, tags, de
     return (
         <Card sx={{ maxWidth: 400 }} elevation={0}>
             <CardHeader
-                title={title}
+                sx={{ padding: 0 }}
+                title={<Typography variant="h6">{title}</Typography>}
                 subheader={<>
                     {tags.map((tag, index) => (
                         <Tag key={index} name={tag.name} category={tag.category} />
@@ -36,6 +37,7 @@ export default function ImageCard({ media, mediaType, mediaLink, title, tags, de
             />
             <div style={{ position: 'relative' }}>
                 {mediaLink ? (
+                <div style={{ padding: '15px 0' }}>
                     <a href={mediaLink} target="_blank" rel="noopener noreferrer">
                         <CardMedia
                             component={mediaType}
@@ -45,14 +47,17 @@ export default function ImageCard({ media, mediaType, mediaLink, title, tags, de
                             controls={mediaType === 'video'}
                         />
                     </a>
+                </div>
                 ) : (
-                <CardMedia
-                    component={mediaType}
-                    src={media[currentImageIndex]}
-                    // width="300"
-                    // height="250"
-                    controls={mediaType === 'video'}
-                />)}
+                <div style={{ padding: '15px 0' }}>
+                    <CardMedia
+                        component={mediaType}
+                        src={media[currentImageIndex]}
+                        // width="300"
+                        // height="250"
+                        controls={mediaType === 'video'}
+                    />
+                </div>)}
                 {media.length > 1 && (
                     <>
                         <IconButton 
@@ -70,8 +75,8 @@ export default function ImageCard({ media, mediaType, mediaLink, title, tags, de
                     </>
                 )}
             </div>
-            <CardContent>
-                <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            <CardContent style={{ padding: 0 }}>
+                <Typography sx={{ color: 'text.secondary', textAlign: 'justify' }}>
                     {description}
                 </Typography>
             </CardContent>

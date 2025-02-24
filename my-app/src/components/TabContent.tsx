@@ -81,13 +81,13 @@ const TabContent = () => {
                 <TabPanel value="1">
                     <InteractiveMap hotspots={travelSpots} selectedFilters={selectedFilters} />
                 </TabPanel>
-                <TabPanel value="2" sx={{ padding: 0 }}>
+                <TabPanel value="2">
                     <Projects projects={data[0]} selectedFilters={selectedFilters} />
                 </TabPanel>
-                <TabPanel value="3" sx={{ padding: 0 }}>
+                <TabPanel value="3">
                     <Projects projects={data[1]} selectedFilters={selectedFilters} />
                 </TabPanel>
-                <TabPanel value="4" sx={{ padding: 0 }}>
+                <TabPanel value="4">
                     <Projects projects={data[2]} selectedFilters={selectedFilters} />
                 </TabPanel>
             </TabContext>

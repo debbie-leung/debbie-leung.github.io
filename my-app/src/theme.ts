@@ -39,6 +39,9 @@ let theme = createTheme({
   },
   typography: {
     fontFamily: '"Poppins", sans-serif',
+    body1: {
+      fontSize: '0.938rem',
+    },
   }
 });
 
