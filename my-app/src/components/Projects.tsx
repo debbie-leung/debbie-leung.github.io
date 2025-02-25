@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Container } from '@mui/material';
 import Grid from '@mui/material/Grid2';
 import ImageCard from '../reusables/ImageCard';
 import { MediaType } from '../enums/MediaType';
@@ -29,7 +28,7 @@ const Projects = ({ projects, selectedFilters }: ProjectProps) => {
   return (
     <Grid container spacing={3}>
       {selectedProjects.map((project, index) => (
-        <Grid key={index} size={{ xs: 12, md: 4 }}>
+        <Grid key={index} size={{ xs: 12, sm: 6, md: 4 }}>
           <ImageCard {...project} />
         </Grid>
       ))}

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import InteractiveMap from './InteractiveMap';
 import Projects, { Project } from './Projects';
@@ -13,6 +12,7 @@ import travelSpots from '../data/TravelSpots';
 import FilterBar from './FilterBar';
 import { TagProps } from '../reusables/Tag';
 import { travelCategories } from '../data/TravelCategories';
+import Tabs from '@mui/material/Tabs';
 
 const TabContent = () => {
     const [tabValue, setTabValue] = useState('1');
@@ -54,59 +54,62 @@ const TabContent = () => {
     };
 
     return (
-        <Box sx={{ width: '100%', typography: 'body1' }}>
-            <TabContext value={tabValue}>
-                <Box sx={{ 
-                    borderBottom: 1, 
-                    borderColor: 'divider', 
-                    backgroundColor: 'background.default',
-                    position: { xs: 'fixed', md: 'sticky' }, 
-                    top: { xs: 'auto', md: 0 },
-                    bottom: { xs: 0, md: 'auto' },
-                    zIndex: 1,
-                    display: 'flex',
-                    alignItems: 'center',
-                    flexDirection: { xs: "column", md: "row"},
-                    width: '100%',
-                }}>
-                    <Box sx={{ width: { xs: '100%', md: '70%' } }}>
-                        <TabList 
-                            sx={{
-                                width: '100%',
-                                '& .MuiTabs-scrollButtons': {
-                                    display: 'flex',
-                                    '&.Mui-disabled': { opacity: 0.3 },
-                                },
-                            }}
-                            variant="scrollable"
-                            scrollButtons="auto"
-                            allowScrollButtonsMobile
-                            onChange={(event, newValue) => handleChange(newValue)} 
-                        >
-                            <Tab label="Travel" value="1" />
-                            <Tab label="Technical Projects" value="2" />
-                            <Tab label="Biology Projects" value="3" />
-                            <Tab label="Publications" value="4" />
-                        </TabList>
-                    </Box>
-                    <Box sx={{ width: { xs: '100%', md: '30%' }, padding: { xs: 1, md: 0 } }}>
-                        <FilterBar tabValue={tabValue} options={filterOptions} value={selectedFilters} onChange={setSelectedFilters} />
-                    </Box>
+        <TabContext value={tabValue}>
+            <Box sx={{ 
+                borderBottom: 1, 
+                borderColor: 'divider', 
+                backgroundColor: 'background.default',
+                position: { xs: 'fixed', md: 'sticky' }, 
+                top: { xs: 'auto', md: 0 },
+                bottom: { xs: 0, md: 'auto' },
+                zIndex: 1,
+                display: 'flex',
+                alignItems: 'center',
+                flexDirection: { xs: "column", md: "row"},
+                width: '100%',
+                typography: 'body1'
+            }}>
+                <Box sx={{ width: { xs: '100%', md: '70%' },bgcolor: 'background.paper' }}>
+                    <Tabs
+                        variant="scrollable"
+                        scrollButtons="auto"
+                        allowScrollButtonsMobile
+                        sx={{ 
+                            width: '100%',
+                            '& .MuiTabs-scrollButtons': {
+                                display: 'flex',
+                                '&.Mui-disabled': { opacity: 0.3 },
+                            },
+                            '& .MuiTabs-flexContainer': {
+                                justifyContent: { xs: 'flex-start', sm: 'center', md: 'flex-start' },
+                            },
+                        }}
+                        value={tabValue} 
+                        onChange={(event, newValue) => handleChange(newValue)} 
+                    >
+                        <Tab label="Travel" value="1" />
+                        <Tab label="Technical Projects" value="2" />
+                        <Tab label="Biology Projects" value="3" />
+                        <Tab label="Publications" value="4" />
+                    </Tabs>
                 </Box>
-                <TabPanel value="1">
-                    <InteractiveMap hotspots={travelSpots} selectedFilters={selectedFilters} />
-                </TabPanel>
-                <TabPanel value="2">
-                    <Projects projects={data[0]} selectedFilters={selectedFilters} />
-                </TabPanel>
-                <TabPanel value="3">
-                    <Projects projects={data[1]} selectedFilters={selectedFilters} />
-                </TabPanel>
-                <TabPanel value="4">
-                    <Projects projects={data[2]} selectedFilters={selectedFilters} />
-                </TabPanel>
-            </TabContext>
-        </Box>
+                <Box sx={{ width: { xs: '100%', md: '30%' }, padding: { xs: 1, md: 0 } }}>
+                    <FilterBar tabValue={tabValue} options={filterOptions} value={selectedFilters} onChange={setSelectedFilters} />
+                </Box>
+            </Box>
+            <TabPanel value="1">
+                <InteractiveMap hotspots={travelSpots} selectedFilters={selectedFilters} />
+            </TabPanel>
+            <TabPanel value="2">
+                <Projects projects={data[0]} selectedFilters={selectedFilters} />
+            </TabPanel>
+            <TabPanel value="3">
+                <Projects projects={data[1]} selectedFilters={selectedFilters} />
+            </TabPanel>
+            <TabPanel value="4">
+                <Projects projects={data[2]} selectedFilters={selectedFilters} />
+            </TabPanel>
+        </TabContext>
     );
 };
 
