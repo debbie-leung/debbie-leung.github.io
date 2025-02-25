@@ -30,14 +30,14 @@ const Profile = ({ colorMode, handleModeChange }: ProfileProps) => {
                         padding: 1
                     }}
                 >
-                    { colorMode === Mode.Light ? <LightModeIcon /> : <DarkModeIcon /> }
+                    { colorMode === Mode.Light ? <DarkModeIcon /> : <LightModeIcon /> }
                 </IconButton>
             </Grid>
             <Grid display="flex" justifyContent="center">
                 <Typography variant="h4" component="span" sx={{ fontWeight: 'bold' }}>DEBBIE</Typography>
                 <Typography variant="h4" component="span">&nbsp;LEUNG</Typography>
             </Grid>
-            <Grid>
+            <Grid container spacing={0} sx={{ flexDirection: { xs: "column", sm: "row"}, justifyContent: { sm: "space-evenly", md: "flex-start" }, alignItems: { xs : 'center' } }}>
                 <Grid container spacing={2}>
                     <Grid>
                         <PhoneIcon />
@@ -55,10 +55,10 @@ const Profile = ({ colorMode, handleModeChange }: ProfileProps) => {
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid>
+            <Grid container spacing={0} sx={{ justifyContent: { xs: 'center', sm: 'center', md: 'flex-start' }}}>
                 <Typography variant="h6">SOCIAL</Typography>
-                <Grid container direction="row" spacing={{ xs: '20vw', md: '4vw' }}>
-                    <Grid container spacing={2} component="a" href="https://www.linkedin.com/in/debbie-sinki-leung/" target="_blank" rel="noopener noreferrer" sx={{ textDecoration: 'none', color: 'inherit' }}>
+                <Grid container direction="row" sx={{ width: '100%', display: 'flex', justifyContent: { xs: 'space-evenly', sm: 'space-evenly', md: 'flex-start' } }}>
+                    <Grid container spacing={2} component="a" href="https://www.linkedin.com/in/debbie-sinki-leung/" target="_blank" rel="noopener noreferrer" sx={{ textDecoration: 'none', color: 'inherit', width: { xs: 'auto', sm: 'auto', md: '50%' } }}>
                         <Grid>
                             <LinkedInIcon />
                         </Grid>
@@ -66,7 +66,7 @@ const Profile = ({ colorMode, handleModeChange }: ProfileProps) => {
                             <Typography>LinkedIn</Typography>
                         </Grid>
                     </Grid>
-                    <Grid container spacing={2} component="a" href="https://github.com/debbie-leung" target="_blank" rel="noopener noreferrer" sx={{ textDecoration: 'none', color: 'inherit' }}>
+                    <Grid container spacing={2} component="a" href="https://github.com/debbie-leung" target="_blank" rel="noopener noreferrer" sx={{ textDecoration: 'none', color: 'inherit', width: { xs: 'auto', sm: 'auto', md: '50%' } }}>
                         <Grid>
                             <GitHubIcon />
                         </Grid>
@@ -76,9 +76,11 @@ const Profile = ({ colorMode, handleModeChange }: ProfileProps) => {
                     </Grid>
                 </Grid>
             </Grid>
-            <Grid>
-                <Typography variant="h6">PROFILE</Typography>
-                <Typography>
+            <Grid container spacing={0} sx={{ 
+                textAlign: { xs: 'center', sm: 'center', md: 'left' }
+            }}>
+                <Typography variant="h6" sx={{ width: '100%' }}>PROFILE</Typography>
+                <Typography sx={{ width: '100%', textAlign: 'justify' }}>
                 Hello! I'm a systems engineer with a B.A. degree in Computer Science and Environmental Biology from Columbia University. I enjoy embedded / firmware programming, robotics, full-stack development, computer vision, graphics and animation. I'm also passionate about marine biology and diving.
                 </Typography>
             </Grid>
