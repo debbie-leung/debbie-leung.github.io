@@ -18,23 +18,19 @@ const App = () => {
   }, [mode, systemMode]);
 
   return (
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid container>
-          <Grid size={3} sx={{ position: 'sticky', top: 0, height: '100vh' }}>
-            <Profile colorMode={mode as Mode} handleModeChange={setMode} />
-          </Grid>
-          <Grid size={9} sx={{ paddingRight: 3 }}>
-            <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <Box sx={{ flexGrow: 1 }}>
-                <TabContent />
-              </Box>
-              <Typography variant="caption" sx={{ textAlign: 'right', marginBottom: 2 }}>
-                ©2025 Website coded in React and Material UI
-              </Typography>
-            </Box>
-          </Grid>
-        </Grid>
-      </Box>
+    <Grid container sx={{ flexDirection: { xs: "column", md: "row"} }}>
+      <Grid size={{ xs: 12, md: 3 }} sx={{ position: { xs: 'static', md: 'sticky' }, top: 0, height: { xs: 'auto', md: '100vh' } }}>
+        <Profile colorMode={mode as Mode} handleModeChange={setMode} />
+      </Grid>
+      <Grid size={{ xs: 12, md: 9 }} sx={{ paddingRight: { xs: 0, md: 3 } }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+          <TabContent />
+          <Typography variant="caption" sx={{ textAlign: 'right', marginBottom: 2 }}>
+            ©2025 Website coded in React and Material UI
+          </Typography>
+        </Box>
+      </Grid>
+    </Grid>
   );
 };
 

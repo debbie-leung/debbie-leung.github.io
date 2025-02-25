@@ -29,7 +29,7 @@ const Projects = ({ projects, selectedFilters }: ProjectProps) => {
   return (
     <Grid container spacing={3}>
       {selectedProjects.map((project, index) => (
-        <Grid key={index} size={4}>
+        <Grid key={index} size={{ xs: 12, md: 4 }}>
           <ImageCard {...project} />
         </Grid>
       ))}

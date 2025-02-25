@@ -60,21 +60,38 @@ const TabContent = () => {
                     borderBottom: 1, 
                     borderColor: 'divider', 
                     backgroundColor: 'background.default',
-                    position: 'sticky', 
-                    top: 0, 
+                    position: { xs: 'fixed', md: 'sticky' }, 
+                    top: { xs: 'auto', md: 0 },
+                    bottom: { xs: 0, md: 'auto' },
                     zIndex: 1,
                     display: 'flex',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    flexDirection: { xs: "column", md: "row"},
+                    width: '100vw',
+                    maxWidth: '100%',
+                    overflowX: 'auto'
                 }}>
-                    <Box sx={{ width: '70%' }}>
-                        <TabList onChange={(event, newValue) => handleChange(newValue)} sx={{ width: '100%' }}>
+                    <Box sx={{ width: { xs: '100%', md: '70%' } }}>
+                        <TabList 
+                            sx={{
+                                width: '100%',
+                                '& .MuiTabs-scrollButtons': {
+                                    display: 'flex',
+                                    '&.Mui-disabled': { opacity: 0.3 },
+                                },
+                            }}
+                            variant="scrollable"
+                            scrollButtons="auto"
+                            allowScrollButtonsMobile
+                            onChange={(event, newValue) => handleChange(newValue)} 
+                        >
                             <Tab label="Travel" value="1" />
                             <Tab label="Technical Projects" value="2" />
                             <Tab label="Biology Projects" value="3" />
                             <Tab label="Publications" value="4" />
                         </TabList>
                     </Box>
-                    <Box sx={{ width: '30%' }}>
+                    <Box sx={{ width: { xs: '100%', md: '30%' } }}>
                         <FilterBar tabValue={tabValue} options={filterOptions} value={selectedFilters} onChange={setSelectedFilters} />
                     </Box>
                 </Box>

@@ -19,7 +19,7 @@ const Profile = ({ colorMode, handleModeChange }: ProfileProps) => {
 
     return (
         <Grid container spacing={4} direction="column" sx={{ padding: 3, position: 'relative' }}>
-            <Grid sx={{ position: 'absolute', top: 0, right: 0, paddingTop: 1, paddingRight: 5 }}>
+            <Grid sx={{ position: 'absolute', top: 0, right: 0, paddingTop: 1, paddingRight: { xs: 2, md: 5 } }}>
                 <IconButton onClick={() => { handleModeChange(colorMode === Mode.Light ? Mode.Dark : Mode.Light) }}>
                 { colorMode === Mode.Light ? <LightModeIcon /> : <DarkModeIcon /> }
                 </IconButton>
@@ -28,7 +28,8 @@ const Profile = ({ colorMode, handleModeChange }: ProfileProps) => {
                 <Avatar alt="Debbie Leung" src={profilePicture} sx={{ width: 120, height: 120 }} />
             </Grid>
             <Grid display="flex" justifyContent="center">
-                <Typography variant="h4">DEBBIE LEUNG</Typography>
+                <Typography variant="h4" component="span" sx={{ fontWeight: 'bold' }}>DEBBIE</Typography>
+                <Typography variant="h4" component="span">&nbsp;LEUNG</Typography>
             </Grid>
             <Grid>
                 <Grid container spacing={2}>
@@ -72,7 +73,7 @@ const Profile = ({ colorMode, handleModeChange }: ProfileProps) => {
             <Grid>
                 <Typography variant="h6">PROFILE</Typography>
                 <Typography>
-                Hello! I'm a systems engineer with a B.A. degree in Computer Science and Environmental Biology from Columbia University. I enjoy embedded programming, robotics, full-stack development, computer vision, graphics and animation. I'm also passionate about marine biology and diving.
+                Hello! I'm a systems engineer with a B.A. degree in Computer Science and Environmental Biology from Columbia University. I enjoy embedded / firmware programming, robotics, full-stack development, computer vision, graphics and animation. I'm also passionate about marine biology and diving.
                 </Typography>
             </Grid>
         </Grid>
