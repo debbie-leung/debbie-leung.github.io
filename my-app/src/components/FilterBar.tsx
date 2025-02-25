@@ -21,21 +21,48 @@ const FilterBar = ({ tabValue, options, value, onChange }: FilterBarProps) => {
       onChange={(event, newValue) => onChange(newValue as TagProps[])}
       groupBy={parseInt(tabValue) > 1 ? (option) => option.category : undefined}
       popupIcon={<FilterList />}
-      // style={{ maxHeight: '40px', overflowX: 'auto' }}
-      renderTags={(tagValue, getTagProps) =>
-        tagValue.map((option, index) => {
-          const tagProps = getTagProps({ index });
-          return (
-            <Chip
-              key={tagProps.key}
-              label={option.name}
-              color={tagCategoryColors[option.category].chipColor}
-              {...tagProps}
-              size="small"
-            />
-          );
-        })
-      }
+      sx={{ 
+        '.MuiAutocomplete-inputRoot': {
+          flexWrap: 'nowrap !important'
+        },
+        '.MuiAutocomplete-tag': { 
+          maxWidth: { xs: '8rem', sm: '10rem', md: '6rem' }
+        },
+      }}
+      renderTags={(tagValue, getTagProps) => {
+        const numTags = tagValue.length;
+        const limitTags = 2;
+
+        return (
+          <>
+            {value.slice(0, limitTags).map((option, index) => (
+              <Chip
+                {...getTagProps({ index })}
+                key={index}
+                label={option.name}
+                color={tagCategoryColors[option.category].chipColor}
+                size="small"
+              />
+            ))}
+
+            {numTags > limitTags && ` +${numTags - limitTags}`}
+          </>
+        );
+      }}
+      // renderTags={(tagValue, getTagProps) =>
+      //   tagValue.map((option, index) => {
+      //     const tagProps = getTagProps({ index });
+      //     return (
+      //       <Chip
+      //         key={tagProps.key}
+      //         label={option.name}
+      //         color={tagCategoryColors[option.category].chipColor}
+      //         {...tagProps}
+      //         size="small"
+      //       />
+      //     );
+      //   })
+      // }
       renderOption={(props, option) => {
         const { key, ...restProps } = props; 
         return (
@@ -52,6 +79,7 @@ const FilterBar = ({ tabValue, options, value, onChange }: FilterBarProps) => {
         <TextField
           {...params}
           variant="standard"
+          size="small"
         />
       )}
     />

@@ -69,7 +69,7 @@ const TabContent = () => {
                 width: '100%',
                 typography: 'body1'
             }}>
-                <Box sx={{ width: { xs: '100%', md: '70%' },bgcolor: 'background.paper' }}>
+                <Box sx={{ width: { xs: '100%', md: '70%' }, bgcolor: 'background.paper' }}>
                     <Tabs
                         variant="scrollable"
                         scrollButtons="auto"
