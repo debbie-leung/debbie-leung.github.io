@@ -22,8 +22,12 @@ const Projects = ({ projects, selectedFilters }: ProjectProps) => {
   const [selectedProjects, setSelectedProjects] = useState<Project[]>(projects);
 
   useEffect(() => {
-    setSelectedProjects(projects.filter(project => selectedFilters.every(filter => project.tags.some(tag => tag.name === filter.name))));
-  }, [projects,selectedFilters]);
+    if (selectedFilters.length > 0) {
+      setSelectedProjects(projects.filter(project => selectedFilters.some(filter => project.tags.some(tag => tag.name === filter.name))));
+    } else {
+      setSelectedProjects(projects);
+    }
+  }, [projects, selectedFilters]);
 
   return (
     <Grid container spacing={3}>

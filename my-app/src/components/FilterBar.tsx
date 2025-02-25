@@ -25,13 +25,41 @@ const FilterBar = ({ tabValue, options, value, onChange }: FilterBarProps) => {
         '.MuiAutocomplete-inputRoot': {
           flexWrap: 'nowrap !important'
         },
-        '.MuiAutocomplete-tag': { 
-          maxWidth: { xs: '8rem', sm: '10rem', md: '6rem' }
-        },
       }}
       renderTags={(tagValue, getTagProps) => {
         const numTags = tagValue.length;
-        const limitTags = 2;
+        const containerWidth = document.querySelector('.MuiAutocomplete-root')?.clientWidth || 0;
+        const availableWidth = containerWidth - 110; // Account for input field and padding
+        
+        // Calculate total width of all chips
+        let totalChipsWidth = 0;
+        let limitTags = 0;
+        
+        // Create a temporary container to measure chip widths
+        const tempContainer = document.createElement('div');
+        tempContainer.style.position = 'absolute';
+        tempContainer.style.visibility = 'hidden';
+        document.body.appendChild(tempContainer);
+
+        // Measure each chip's width
+        for (let i = 0; i < numTags; i++) {
+          const chip = document.createElement('div');
+          chip.style.display = 'inline-block';
+          chip.textContent = tagValue[i].name;
+          tempContainer.appendChild(chip);
+          
+          const chipWidth = chip.offsetWidth + 20; // Add margin/padding
+          
+          totalChipsWidth += chipWidth;
+          if (totalChipsWidth < availableWidth) {
+            limitTags++;
+          } else {
+            break;
+          }
+        }
+
+        // Clean up temporary container
+        document.body.removeChild(tempContainer);
 
         return (
           <>
@@ -44,25 +72,10 @@ const FilterBar = ({ tabValue, options, value, onChange }: FilterBarProps) => {
                 size="small"
               />
             ))}
-
             {numTags > limitTags && ` +${numTags - limitTags}`}
           </>
         );
       }}
-      // renderTags={(tagValue, getTagProps) =>
-      //   tagValue.map((option, index) => {
-      //     const tagProps = getTagProps({ index });
-      //     return (
-      //       <Chip
-      //         key={tagProps.key}
-      //         label={option.name}
-      //         color={tagCategoryColors[option.category].chipColor}
-      //         {...tagProps}
-      //         size="small"
-      //       />
-      //     );
-      //   })
-      // }
       renderOption={(props, option) => {
         const { key, ...restProps } = props; 
         return (
