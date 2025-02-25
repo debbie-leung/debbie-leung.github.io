@@ -1,6 +1,5 @@
 import { Hotspot } from "../components/InteractiveMap";
 import { TravelType } from "../enums/TravelType";
-import wallE from '../media/technical/wall-e.gif';
 import ghana1 from '../media/travel/ghana_1.jpg';
 import ghana2 from '../media/travel/ghana_2.jpg';
 import jordan1 from '../media/travel/jordan_1.jpg';
@@ -40,8 +39,17 @@ import philippines1 from '../media/travel/philippines_1.jpg';
 import philippines2 from '../media/travel/philippines_2.jpg';
 import philippines3 from '../media/travel/philippines_3.jpg';
 import philippines4 from '../media/travel/philippines_4.jpg';
+import boston1 from '../media/travel/boston_1.jpg'
+import boston2 from '../media/travel/boston_2.jpg'
+import boston3 from '../media/travel/boston_3.jpg'
+import tulum1 from '../media/travel/tulum_1.jpg'
+import tulum2 from '../media/travel/tulum_2.jpg'
+import paris1 from '../media/travel/paris_1.jpg'
+import paris2 from '../media/travel/paris_2.jpg'
+import paris3 from '../media/travel/paris_3.jpg'
+import paris4 from '../media/travel/paris_4.jpg'
 
-// TODO: missing San Diego, France, and Vietnam?
+// TODO: missing San Diego?
 
 const travelSpots: Hotspot[] = [
     { 
@@ -174,7 +182,7 @@ const travelSpots: Hotspot[] = [
         latitude: 42.3601,
         longitude: -71.0589,
         description: ["Worked at Dynamic Motion Control Inc. as a Systems Engineer"],
-        media: [wallE]
+        media: [boston1, boston2, boston3]
     },
     {
         country: "Mexico",
@@ -185,7 +193,7 @@ const travelSpots: Hotspot[] = [
         latitude: 21.2397,
         longitude: -87.4259,
         description: ["Attended a college friend's Bachelorette Party"],
-        media: [wallE]
+        media: [tulum1, tulum2]
     },
     {
         country: "United States",
@@ -195,7 +203,7 @@ const travelSpots: Hotspot[] = [
         category: TravelType.Diving,
         latitude: 36.5886,
         longitude: -121.8854,
-        description: ["Conducted marine ecology research at Stanford's Hopkins Marine Station", "Dived at the Monterey Bay Aquarium Research Institute"],
+        description: ["Conducted marine ecology research at Stanford's Hopkins Marine Station", "Visited the Monterey Bay Aquarium"],
         media: [stanford1, stanford2, stanford3]
     },
     {
@@ -208,6 +216,18 @@ const travelSpots: Hotspot[] = [
         longitude: 123.8865,
         description: ["Completed PADI Open Water Diver certification at La Laguna Beach Club & Dive Centre"],
         media: [philippines1, philippines2, philippines3, philippines4]
+    },
+    {
+        country: "France",
+        countryCode: "FR",
+        city: "Paris",
+        date: "September 2024",
+        category: TravelType.FunTrip,
+        latitude: 48.8575,
+        longitude: 2.3514,
+        description: ["Watched the Paris Paralympics game", "Stayed over a friend's house in the countryside"],
+        media: [paris1, paris2, paris3, paris4]
+
     }
 ];
 
