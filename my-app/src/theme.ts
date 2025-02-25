@@ -26,8 +26,6 @@ let theme = createTheme({
   // palette: {
   //   primary: {
   //     main: '#dc143c', // Your primary color
-  //     // hardware: '#dc143c',
-  //     // software: '#dc004e',
   //   },
   //   secondary: {
   //     main: '#6495ED', // Your secondary color

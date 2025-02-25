@@ -67,9 +67,7 @@ const TabContent = () => {
                     display: 'flex',
                     alignItems: 'center',
                     flexDirection: { xs: "column", md: "row"},
-                    width: '100vw',
-                    maxWidth: '100%',
-                    overflowX: 'auto'
+                    width: '100%',
                 }}>
                     <Box sx={{ width: { xs: '100%', md: '70%' } }}>
                         <TabList 
@@ -91,7 +89,7 @@ const TabContent = () => {
                             <Tab label="Publications" value="4" />
                         </TabList>
                     </Box>
-                    <Box sx={{ width: { xs: '100%', md: '30%' } }}>
+                    <Box sx={{ width: { xs: '100%', md: '30%' }, padding: { xs: 1, md: 0 } }}>
                         <FilterBar tabValue={tabValue} options={filterOptions} value={selectedFilters} onChange={setSelectedFilters} />
                     </Box>
                 </Box>

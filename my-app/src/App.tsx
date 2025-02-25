@@ -23,9 +23,19 @@ const App = () => {
         <Profile colorMode={mode as Mode} handleModeChange={setMode} />
       </Grid>
       <Grid size={{ xs: 12, md: 9 }} sx={{ paddingRight: { xs: 0, md: 3 } }}>
-        <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', height: '100%', paddingBottom: { xs: '80px', md: 0 } }}>
           <TabContent />
-          <Typography variant="caption" sx={{ textAlign: 'right', marginBottom: 2 }}>
+          <Typography variant="caption" sx={{ 
+            textAlign: 'right', 
+            position: 'sticky', 
+            bottom: 0, 
+            right: 0, 
+            padding: 2, 
+            backgroundColor: 'background.default',
+            zIndex: 1,
+            display: { xs: 'none', md: 'block' },
+            marginTop: 'auto',
+          }}>
             ©2025 Website coded in React and Material UI
           </Typography>
         </Box>

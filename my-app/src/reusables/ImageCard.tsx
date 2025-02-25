@@ -28,7 +28,7 @@ export default function ImageCard({ media, mediaType, mediaLink, title, tags, de
         <Card sx={{ maxWidth: 400 }} elevation={0}>
             <CardHeader
                 sx={{ padding: 0 }}
-                title={<Typography variant="h6">{title}</Typography>}
+                title={<Typography variant="h6" sx={{ lineHeight: 1.2 }}>{title}</Typography>}
                 subheader={<>
                     {tags.map((tag, index) => (
                         <Tag key={index} name={tag.name} category={tag.category} />

@@ -19,13 +19,19 @@ const Profile = ({ colorMode, handleModeChange }: ProfileProps) => {
 
     return (
         <Grid container spacing={4} direction="column" sx={{ padding: 3, position: 'relative' }}>
-            <Grid sx={{ position: 'absolute', top: 0, right: 0, paddingTop: 1, paddingRight: { xs: 2, md: 5 } }}>
-                <IconButton onClick={() => { handleModeChange(colorMode === Mode.Light ? Mode.Dark : Mode.Light) }}>
-                { colorMode === Mode.Light ? <LightModeIcon /> : <DarkModeIcon /> }
-                </IconButton>
-            </Grid>
-            <Grid display="flex" justifyContent="center">
+            <Grid display="flex" justifyContent="center" sx={{ position: 'relative' }}>
                 <Avatar alt="Debbie Leung" src={profilePicture} sx={{ width: 120, height: 120 }} />
+                <IconButton 
+                    onClick={() => { handleModeChange(colorMode === Mode.Light ? Mode.Dark : Mode.Light) }}
+                    sx={{ 
+                        position: 'absolute', 
+                        top: {xs: '-1.5vh', md: '-2.5vh'}, 
+                        right: { xs: '-2vw', md: '-0.5vw' },
+                        padding: 1
+                    }}
+                >
+                    { colorMode === Mode.Light ? <LightModeIcon /> : <DarkModeIcon /> }
+                </IconButton>
             </Grid>
             <Grid display="flex" justifyContent="center">
                 <Typography variant="h4" component="span" sx={{ fontWeight: 'bold' }}>DEBBIE</Typography>
@@ -51,7 +57,7 @@ const Profile = ({ colorMode, handleModeChange }: ProfileProps) => {
             </Grid>
             <Grid>
                 <Typography variant="h6">SOCIAL</Typography>
-                <Grid container direction="row" spacing={4}>
+                <Grid container direction="row" spacing={{ xs: '20vw', md: '4vw' }}>
                     <Grid container spacing={2} component="a" href="https://www.linkedin.com/in/debbie-sinki-leung/" target="_blank" rel="noopener noreferrer" sx={{ textDecoration: 'none', color: 'inherit' }}>
                         <Grid>
                             <LinkedInIcon />

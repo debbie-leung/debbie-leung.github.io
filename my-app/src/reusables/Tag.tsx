@@ -37,6 +37,7 @@ export default function Tag({ name, category }: TagProps) {
             label={name}
             color={tagCategoryColors[category].chipColor}
             size="small"
+            sx={{ marginRight: 0.5, marginTop: 0.8 }}
         />
     );
 }
