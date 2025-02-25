@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
-import { Card, CardContent, CardMedia, IconButton, Popover, Typography } from '@mui/material';
+import React, { useRef, useState } from 'react';
+import { Card, CardContent, CardMedia, IconButton, Popover, Typography, styled } from '@mui/material';
 import { Hotspot } from '../components/InteractiveMap';
 import ReactCountryFlag from 'react-country-flag';
-import { ChevronRight } from '@mui/icons-material';
-import { ChevronLeft } from '@mui/icons-material';
+import { ChevronRight, ChevronLeft } from '@mui/icons-material';
 import { MediaType } from '../enums/MediaType';
+
+const PopoverStyled = styled(Popover)({
+  pointerEvents: 'none',
+  '& .MuiPopover-paper': {
+    pointerEvents: 'auto',
+  }
+});
 
 interface MouseHoverPopoverProps {
   data: Hotspot;
@@ -12,18 +18,21 @@ interface MouseHoverPopoverProps {
 }
 
 const MouseHoverPopover = ({ data, children }: MouseHoverPopoverProps) => {
-  const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [openedPopover, setOpenedPopover] = useState(false);
+  const popoverAnchor = useRef<HTMLElement | null>(null);
 
-  const handlePopoverOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
+  const popoverEnter = (event: React.MouseEvent<HTMLElement>) => {
+    setOpenedPopover(true);
   };
 
-  const handlePopoverClose = () => {
-    setAnchorEl(null);
+  const popoverLeave = (event: React.MouseEvent<HTMLElement>) => {
+    setOpenedPopover(false);
+    // Set 200ms delay timeout to allow popover to close before resetting the index
+    setTimeout(() => {
+      setCurrentImageIndex(0);
+    }, 200);
   };
-
-  const open = Boolean(anchorEl);
 
   const handleNext = () => {
     setCurrentImageIndex((prev) => (prev + 1) % data.media.length);
@@ -36,17 +45,22 @@ const MouseHoverPopover = ({ data, children }: MouseHoverPopoverProps) => {
   return (
     <div>
       {React.cloneElement(children, {
-        onMouseEnter: handlePopoverOpen,
-        onMouseLeave: handlePopoverClose
-      })}
-      <Popover
-        sx={{ pointerEvents: 'none' }}
-        open={open}
-        anchorEl={anchorEl}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
-        transformOrigin={{ vertical: 'top', horizontal: 'left' }}
-        onClose={handlePopoverClose}
-        disableRestoreFocus
+        onMouseEnter: popoverEnter,
+        onMouseLeave: popoverLeave,
+        ref: popoverAnchor
+      } as React.HTMLAttributes<HTMLElement>)}
+      <PopoverStyled
+        open={openedPopover}
+        anchorEl={popoverAnchor.current}
+        anchorOrigin={{
+          vertical: 'bottom',
+          horizontal: 'right',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'left',
+        }}
+        PaperProps={{onMouseEnter: popoverEnter, onMouseLeave: popoverLeave}}
       >
         <Card sx={{ width: 300 }}>
           <CardContent>
@@ -56,28 +70,27 @@ const MouseHoverPopover = ({ data, children }: MouseHoverPopoverProps) => {
             </Typography>
           </CardContent>
           <div style={{ position: 'relative' }}>
-
-          <CardMedia
-            sx={{ height: 140 }}
-            component={MediaType.Image}
-            src={data.media[currentImageIndex]}
+            <CardMedia
+              sx={{ height: 140 }}
+              component={MediaType.Image}
+              src={data.media[currentImageIndex]}
             />
-          {data.media.length > 1 && (
-            <>
+            {data.media.length > 1 && (
+              <>
                 <IconButton 
                   onClick={handlePrevious}
                   style={{ position: 'absolute', left: 0, top: '50%', transform: 'translateY(-50%)' }}
-                  >
+                >
                   <ChevronLeft />
                 </IconButton>
                 <IconButton 
                   onClick={handleNext}
                   style={{ position: 'absolute', right: 0, top: '50%', transform: 'translateY(-50%)' }}
-                  >
+                >
                   <ChevronRight />
                 </IconButton>
               </>
-          )}
+            )}
           </div>
           <CardContent>
             <Typography variant="h5" component="div">
@@ -95,7 +108,7 @@ const MouseHoverPopover = ({ data, children }: MouseHoverPopoverProps) => {
             </Typography>
           </CardContent>
         </Card>
-      </Popover>
+      </PopoverStyled>
     </div>
   );
 };
