@@ -72,7 +72,7 @@ const travelSpots: Hotspot[] = [
         category: TravelType.Study,
         latitude: -27.4698,
         longitude: 153.0251,
-        description: ["Junior Spring Study Abroad at the University of Queensland", "Tried surfing for the first time"],
+        description: ["Junior Spring Study Abroad at the University of Queensland", "Tried surfing for the first time", "Volunteered to maintain the aquarium system in UQ's Visual Ecology Lab"],
         media: [australia1, australia2, australia3, australia4]
     },
     {
@@ -83,7 +83,7 @@ const travelSpots: Hotspot[] = [
         category: TravelType.Diving,
         latitude: 17.189877,
         longitude: -88.49765,
-        description: ["Dived at Glover's Reef Marine Reserve to conduct marine behavioral ecology field research"],
+        description: ["Conducted marine behavioral ecology field research at Glover's Reef Marine Reserve"],
         media: [belize1, belize2, belize3]
     },
     {
@@ -193,7 +193,7 @@ const travelSpots: Hotspot[] = [
         category: TravelType.FunTrip,
         latitude: 21.2397,
         longitude: -87.4259,
-        description: ["Attended a college friend's Bachelorette Party"],
+        description: ["Attended a college friend's Bachelorette Party", "Toured Zona Arqueologica de Muyil and Sian Kaan Muyil Floating Canals"],
         media: [tulum1, tulum2]
     },
     {
