@@ -7,5 +7,3 @@ Things to fix:
 
 Features to add:
 1. Add technologies/framework icons in the left profile column
-2. Add filter buttons for hardwares, softwares and fields
-3. Potentially world map with all places I've travelled to in a video or animation
