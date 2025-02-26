@@ -9,6 +9,9 @@ const PopoverStyled = styled(Popover)({
   pointerEvents: 'none',
   '& .MuiPopover-paper': {
     pointerEvents: 'auto',
+    '&[aria-hidden="true"]': {
+      display: 'none'
+    }
   }
 });
 

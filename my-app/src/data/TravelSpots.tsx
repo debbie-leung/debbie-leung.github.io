@@ -14,6 +14,8 @@ import switzerland3 from '../media/travel/switzerland_3.jpg';
 import germany1 from '../media/travel/germany_1.jpg';
 import germany2 from '../media/travel/germany_2.jpg';
 import germany3 from '../media/travel/germany_3.jpg';
+import germany4 from '../media/travel/germany_4.jpg';
+import germany5 from '../media/travel/germany_5.jpg';
 import stanford1 from '../media/travel/stanford_1.jpg';
 import stanford2 from '../media/travel/stanford_2.jpg';
 import stanford3 from '../media/travel/stanford_3.jpg';
@@ -28,7 +30,6 @@ import australia4 from '../media/travel/australia_4.jpg';
 import hk1 from '../media/travel/hk_1.jpg';
 import hk2 from '../media/travel/hk_2.jpg';
 import hk3 from '../media/travel/hk_3.jpg';
-import hk4 from '../media/travel/hk_4.jpg';
 import belize1 from '../media/travel/belize_1.jpg';
 import belize2 from '../media/travel/belize_2.jpg';
 import belize3 from '../media/travel/belize_3.jpg';
@@ -149,7 +150,7 @@ const travelSpots: Hotspot[] = [
         latitude: 51.1657,
         longitude: 10.4515,
         description: ["Attended Columbia Summer Core in Berlin: Art Humanities and Music Humanities"],
-        media: [germany1, germany2, germany3]
+        media: [germany1, germany2, germany3, germany4, germany5]
     },
     {
         country: "Hong Kong",
@@ -160,7 +161,7 @@ const travelSpots: Hotspot[] = [
         latitude: 22.3964,
         longitude: 114.1095,
         description: ["Attended Maryknoll Convent School for primary school", "Attended Diocesan Girls' School and Li Po Chun United World College of Hong Kong for secondary school"],
-        media: [hk1, hk2, hk3, hk4]
+        media: [hk1, hk2, hk3]
     },
     {
         country: "United States",
