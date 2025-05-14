@@ -58,7 +58,7 @@ export const technicalProjects: Project[] = [
         { name: "PostgreSQL", category: TagCategory.Technology },
         { name: "Databases", category: TagCategory.Topic },
       ],
-      description: "Integrated interests in marine biology and ecology into building a web app connected to a database server in a team of 2 that allows users to access Gebbank genetic sequences and GBIF occurrence data of various organisms.",
+      description: "Integrated interests in marine biology and ecology into building a web app connected to a database server in a team of 2 that allows users to access Genbank genetic sequences and GBIF occurrence data of various organisms.",
     },
     {
       title: "Pick and Place Robotic Path-Planning",

@@ -36,7 +36,7 @@ const App = () => {
             display: { xs: 'none', md: 'block' },
             marginTop: 'auto',
           }}>
-            ©2025 Website coded in React and Material UI
+            ©2025 Website built in React and Material UI
           </Typography>
         </Box>
       </Grid>

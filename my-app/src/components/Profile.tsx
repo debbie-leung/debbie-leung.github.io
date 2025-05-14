@@ -43,7 +43,7 @@ const Profile = ({ colorMode, handleModeChange }: ProfileProps) => {
                         <PhoneIcon />
                     </Grid>
                     <Grid>
-                        <Typography>(646) 269-4181</Typography>
+                        <Typography>(437) 997-8303</Typography>
                     </Grid>
                 </Grid>
                 <Grid container spacing={2}>
@@ -51,7 +51,7 @@ const Profile = ({ colorMode, handleModeChange }: ProfileProps) => {
                         <EmailIcon />
                     </Grid>
                     <Grid>
-                        <Typography>dsl2162@columbia.edu</Typography>
+                        <Typography>leungsinkidebbie1021@gmail.com</Typography>
                     </Grid>
                 </Grid>
             </Grid>

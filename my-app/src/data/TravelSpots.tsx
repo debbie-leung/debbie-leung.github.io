@@ -49,6 +49,7 @@ import paris1 from '../media/travel/paris_1.jpg'
 import paris2 from '../media/travel/paris_2.jpg'
 import paris3 from '../media/travel/paris_3.jpg'
 import paris4 from '../media/travel/paris_4.jpg'
+import toronto1 from '../media/travel/toronto_1.jpg'
 
 // TODO: missing San Diego?
 
@@ -167,7 +168,7 @@ const travelSpots: Hotspot[] = [
         country: "United States",
         countryCode: "US",
         city: "New York City",
-        date: "September 2017 - September 2023",
+        date: "September 2017 - May 2023",
         category: TravelType.Study,
         latitude: 40.7128,
         longitude: -74.0060,
@@ -178,7 +179,7 @@ const travelSpots: Hotspot[] = [
         country: "United States",
         countryCode: "US",
         city: "Boston",
-        date: "October 2023 - February 2025",
+        date: "October 2023 - March 2025",
         category: TravelType.Work,
         latitude: 42.3601,
         longitude: -71.0589,
@@ -218,6 +219,28 @@ const travelSpots: Hotspot[] = [
         description: ["Completed PADI Open Water Diver certification at La Laguna Beach Club & Dive Centre"],
         media: [philippines1, philippines2, philippines3, philippines4]
     },
+    // {
+    //     country: "United States",
+    //     countryCode: "US",
+    //     city: "Chicago",
+    //     date: "May 2022",
+    //     category: TravelType.Work,
+    //     latitude: 41.8781,
+    //     longitude: -87.6298,
+    //     description: ["Attended Dynamic Motion Control training trip"],
+    //     media: [stanford1, stanford2, stanford3]
+    // },
+    // {
+    //     country: "United States",
+    //     countryCode: "US",
+    //     city: "San Diego",
+    //     date: "October 2022, October 2024",
+    //     category: TravelType.FunTrip,
+    //     latitude: 32.7157,
+    //     longitude: -117.1611,
+    //     description: ["Visited a college friend's house"],
+    //     media: [stanford1, stanford2, stanford3]
+    // },
     {
         country: "France",
         countryCode: "FR",
@@ -228,7 +251,17 @@ const travelSpots: Hotspot[] = [
         longitude: 2.3514,
         description: ["Watched the Paris Paralympics game", "Stayed over a friend's house in the countryside"],
         media: [paris1, paris2, paris3, paris4]
-
+    },
+    {
+        country: "Canada",
+        countryCode: "CA",
+        city: "Toronto",
+        date: "May 2025 - Present",
+        category: TravelType.Work,
+        latitude: 43.6532,
+        longitude: -79.3832,
+        description: ["Moved for engineering job opportunities"],
+        media: [toronto1]
     }
 ];
 
